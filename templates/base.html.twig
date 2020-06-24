@@ -1,12 +1,17 @@
+{% set route_name = app.request.attributes.get('_route') %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}DOCTOPET{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
+    <header>
+        {{ include('_navbar.html.twig') }}
+    </header>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}

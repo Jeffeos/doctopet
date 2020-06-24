@@ -1,7 +1,52 @@
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
+$primarycolor: #41AAA8;
+$secondarycolor: #2C003E;
+$tertiarycolor: #E5E5E5;
+
+
+$titlefont: 'Montserrat', cursive;
+
 body {
-    background-color: red;
+    background-color: $tertiarycolor;
 }
 
+a {
+    color: #2C003E;
+    padding: 0;
+    font-family: $titlefont;
+}
+
+.navbar-brand {
+    font-family: $titlefont;
+}
+.doctopet-navbar {
+    background-color: $primarycolor;
+    color: $secondarycolor;
+    height: 60px;
+}
+
+.navbar-flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-user {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-routes {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* NAVBAR */
+.doctopet-logo {
+    height: 40px;
+    width: 40px;
+}
