@@ -1,15 +1,14 @@
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
-$primarycolor: #41AAA8;
-$secondarycolor: #2C003E;
-$tertiarycolor: #E5E5E5;
-
+$primaryColor: #41AAA8;
+$secondaryColor: #2C003E;
+$tertiaryColor: #E5E5E5;
 
 $titlefont: 'Montserrat', cursive;
 
 body {
-    background-color: $tertiarycolor;
+    background-color: $tertiaryColor;
 }
 
 a {
@@ -22,31 +21,23 @@ a {
     font-family: $titlefont;
 }
 .doctopet-navbar {
-    background-color: $primarycolor;
-    color: $secondarycolor;
-    height: 60px;
-}
-
-.navbar-flex {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.navbar-user {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.navbar-routes {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    background-color: $primaryColor;
+    color: $secondaryColor;
 }
 
 /* NAVBAR */
 .doctopet-logo {
     height: 40px;
     width: 40px;
+}
+
+@media all and (min-width: 769px) {
+    .navbar-flex {
+        width: 100%;
+        display: flex;
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
 }
