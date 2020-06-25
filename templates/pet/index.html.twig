@@ -30,55 +30,60 @@
                 <div class="inside-progress-health-bar-pet" style="width:{{ progressHealth }}"></div>
             </div>
             <div class="text-progress">
-            <span>Health</span>
-            <div class="container-pet"></div>
-            <span>Happiness</span>
+                <span>Health</span>
+                <div class="container-pet">
+                    <div class="panda-window-container">
+                        <button onclick="changeTheVariableToWalk()" id="walk-button">walk</button>
+
+                        <div class="bulles">
+                            <div>
+                                <img class="bulles-option bulles-left act"
+                                     src="{{ asset('/img/panda-bulles/heart.png') }}">
+                                <img class="bulles-option bulles-left"
+                                     src="{{ asset('/img/panda-bulles/brokenheart.png') }}">
+                                <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                                <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                            </div>
+                            <div>
+                                <img class="bulles-option bulles-right act"
+                                     src="{{ asset('/img/panda-bulles/happyface.png') }}">
+                                <img class="bulles-option bulles-right"
+                                     src="{{ asset('/img/panda-bulles/bofface.png') }}">
+                                <img class="bulles-option bulles-right"
+                                     src="{{ asset('/img/panda-bulles/sadface.png') }}">
+                            </div>
+
+                        </div>
+
+                        <div id="panda-move" class="panda-container activate">
+                            <img id="panda-walk-left" class="panda-walk-left anim activated"
+                                 src="{{ asset('/img/panda-sprites/panda-walk-left.png') }}">
+                            <img id="panda-walk-right" class="panda-walk-right anim "
+                                 src="{{ asset('/img/panda-sprites/panda-walk-left.png') }}">
+                        </div>
+                        <div id="panda-stay" class="pand-container ">
+                            <img id="panda-front" class="panda anim activated"
+                                 src="{{ asset('/img/panda-sprites/panda-front.png') }}">
+                            <img id="panda-front-dance" class="panda-front-dance anim "
+                                 src="{{ asset('/img/panda-sprites/panda-front-dance.png') }}">
+                            <img id="panda-back-dance" class="panda-back-dance anim "
+                                 src="{{ asset('/img/panda-sprites/panda-back-dance.png') }}">
+                            <img id="panda-shake-dance" class="panda-shake-dance anim "
+                                 src="{{ asset('/img/panda-sprites/panda-shake.png') }}">
+                            <img id="panda-play" class="panda-play anim "
+                                 src="{{ asset('/img/panda-sprites/panda-circus.png') }}">
+                            <img id="panda-turn-around" class="panda-turn-around anim"
+                                 src="{{ asset('/img/panda-sprites/panda-turn-around.png') }}">
+                        </div>
+                    </div>
+                </div>
+                <span>Happiness</span>
             </div>
             <div class="progress-happiness-bar">
                 <div class="inside-progress-happiness-bar-pet" style="width:{{ progressHappiness }}"></div>
             </div>
-            <div class="health-bar"></div>
-            <div class="container-pet">
-                <div class="panda-window-container">
-                    <button onclick="changeTheVariableToWalk()" id="walk-button">walk</button>
-
-                    <div class="bulles">
-                        <div>
-                            <img class="bulles-option bulles-left act" src="{{ asset('/img/panda-bulles/heart.png') }}">
-                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/brokenheart.png') }}">
-                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
-                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
-                        </div>
-                        <div>
-                            <img class="bulles-option bulles-right act" src="{{ asset('/img/panda-bulles/happyface.png') }}">
-                            <img class="bulles-option bulles-right" src="{{ asset('/img/panda-bulles/bofface.png') }}">
-                            <img class="bulles-option bulles-right" src="{{ asset('/img/panda-bulles/sadface.png') }}">
-                        </div>
-
-                    </div>
-
-                    <div id="panda-move" class="panda-container activate">
-                        <img id="panda-walk-left" class="panda-walk-left anim activated"
-                             src="{{ asset('/img/panda-sprites/panda-walk-left.png') }}">
-                        <img id="panda-walk-right" class="panda-walk-right anim "
-                             src="{{ asset('/img/panda-sprites/panda-walk-left.png') }}">
-                    </div>
-                    <div id="panda-stay" class="pand-container ">
-                        <img id="panda-front" class="panda anim activated"
-                             src="{{ asset('/img/panda-sprites/panda-front.png') }}">
-                        <img id="panda-front-dance" class="panda-front-dance anim "
-                             src="{{ asset('/img/panda-sprites/panda-front-dance.png') }}">
-                        <img id="panda-back-dance" class="panda-back-dance anim "
-                             src="{{ asset('/img/panda-sprites/panda-back-dance.png') }}">
-                        <img id="panda-shake-dance" class="panda-shake-dance anim "
-                             src="{{ asset('/img/panda-sprites/panda-shake.png') }}">
-                        <img id="panda-play" class="panda-play anim " src="{{ asset('/img/panda-sprites/panda-circus.png') }}">
-                        <img id="panda-turn-around" class="panda-turn-around anim"
-                             src="{{ asset('/img/panda-sprites/panda-turn-around.png') }}">
-                    </div>
-                </div>
-            </div>
         </div>
+
         <div class="container-left">
             <div class="container-pet-infos"></div>
             <div class="container-pet-name">
@@ -89,8 +94,10 @@
             <div class="container-button-pet">
                 <div class="text-button">
                     <button class="button-pet">
-                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}" {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} "
-                                                    alt="image bamboo"></button>
+                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
+                             {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} "
+                        alt="image bamboo">
+                    </button>
                     <span>Eat ({{ pet.hasBamboo }})</span>
                 </div>
                 <div class="text-button">
@@ -100,19 +107,22 @@
                     <span>Talk</span>
                 </div>
                 <div class="text-button">
-                    <button class="button-pet" onclick="changeTheVariableToDance()" id="dance-button"><img src="{{ asset('images/icone_panda_danse.png') }}"
-                                                    alt="image panda">
+                    <button class="button-pet" onclick="changeTheVariableToDance()" id="dance-button"><img
+                                src="{{ asset('images/icone_panda_danse.png') }}"
+                                alt="image panda">
                     </button>
                     <span>Dance</span>
                 </div>
                 <div class="text-button">
 
-                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}" class="button-pet" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %} ><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
-                                                    alt="image medoc"></a>
+                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}" class="button-pet"
+                       {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %} >
+                        <img class="pills" src="{{ asset('img/pillule_rouge.png') }}" alt="image medoc"></a>
                     <span>Pills</span>
                 </div>
                 <div class="text-button">
-                    <button class="button-pet" onclick="changeTheVariableToPlay()" id="play-button"><img src="{{ asset('images/icone_panda_jeu.png') }}" alt="image panda">
+                    <button class="button-pet" onclick="changeTheVariableToPlay()" id="play-button"><img
+                                src="{{ asset('images/icone_panda_jeu.png') }}" alt="image panda">
                     </button>
                     <span>Play</span>
                 </div>
