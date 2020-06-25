@@ -36,6 +36,7 @@ class PetFixtures extends Fixture
         $userpet->setName('userpanda');
         $userpet->setHappiness(50);
         $userpet->setUser($user);
+        $userpet->setHasPills(0);
 
         $manager->persist($userpet);
 
@@ -55,6 +56,7 @@ class PetFixtures extends Fixture
         $adminpet->setName('adminpanda');
         $adminpet->setHappiness(50);
         $adminpet->setUser($admin);
+        $adminpet->setHasPills(0);
 
         $manager->persist($adminpet);
 
