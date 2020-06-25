@@ -185,7 +185,7 @@ a {
   display: none;
 }
 
-.activated, .activate, .act {
+.activated, .activate, .active-talk {
   display: block;
 }
 
@@ -206,13 +206,24 @@ a {
 
 .bulles-left {
   height: 150px;
-  width: 150px;
 }
 
 .bulles-right {
   height: 150px;
-  width: 150px;
   transform: rotateY(180deg);
+}
+
+.bulle-anim {
+  animation: pandaTalk 2s steps(5) infinite;
+}
+.bulle-anim2 {
+  animation: pandaTalk2 0.5s steps(2) infinite;
+}
+
+.panda-talking {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
 }
 
   .bnj-container-number {
@@ -276,14 +287,30 @@ a {
       margin-left: 200px
     }
   }
-  @keyframes pandaMoveLeft {
+  @keyframes pandaTalk {
     from {
-      transform: translate(0px, 0px)
+      margin-left: 0px
     }
     to {
-      transform: translate(-200px, 0px)
+      margin-left: -750px
     }
   }
+@keyframes pandaTalk2 {
+  from {
+    margin-left: 0px
+  }
+  to {
+    margin-left: -300px
+  }
+}
+@keyframes pandaMoveLeft {
+  from {
+    transform: translate(0px, 0px)
+  }
+  to {
+    transform: translate(-200px, 0px)
+  }
+}
 
   //MOBILE VIEW GAME INDEX
   .bloc_page_pet {
