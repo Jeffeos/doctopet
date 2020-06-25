@@ -19,9 +19,10 @@
 
             <div class="container-button-pet">
                 <div class="text-button">
-                    <button class="button-pet"><img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
+                    <button class="button-pet">
+                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
                                                     alt="image bamboo"></button>
-                    <span>Eat</span>
+                    <span>Eat ({{ pet.hasBamboo }})</span>
                 </div>
                 <div class="text-button">
                     <button class="button-pet"><img src="{{ asset('images/icone_discussion.png') }}"
