@@ -3,18 +3,35 @@
 
 $primaryColor: #41AAA8;
 $secondaryColor: #2C003E;
-$tertiaryColor: #E5E5E5;
+$tertiaryColor: #51DACF;
 
 $titlefont: 'Montserrat', cursive;
 
 body {
-    background-color: $tertiaryColor;
+    background-color: #E5E5E5;
+    font-family: $titlefont;
+}
+
+h1 {
+    text-align: center;
+    padding: 30px;
 }
 
 a {
     color: #2C003E;
     padding: 0;
     font-family: $titlefont;
+}
+
+.btn {
+    background-color: $tertiaryColor;
+    color: $secondaryColor;
+}
+
+.body-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar-brand {
@@ -31,6 +48,25 @@ a {
     width: 40px;
 }
 
+/* MEDICINE INDEX PAGE */
+.medicine-button {
+    display: flex;
+    justify-content: center;
+}
+
+.time-of-day {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 @media all and (min-width: 769px) {
     .navbar-flex {
         width: 100%;
@@ -41,3 +77,4 @@ a {
         align-items: center;
     }
 }
+

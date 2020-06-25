@@ -3,8 +3,11 @@
 {% block title %}Medicine index{% endblock %}
 
 {% block body %}
-    <h1>Medicine index</h1>
+    <h1>Add a new medicine</h1>
 
+    {{ include('medicine/_form.html.twig', {'button_label': 'Update'}) }}
+
+    {# ADD HERE THE CARDS DISPLAY #}
     <table class="table">
         <thead>
             <tr>
