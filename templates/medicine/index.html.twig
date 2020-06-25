@@ -14,3 +14,11 @@
     {% endif %}
 
 {% endblock %}
+{% block javascripts %}
+    <script>
+        function addPanda(element, elementBis) {
+            document.getElementById(element).classList.toggle("bnj-panda-border-mobile");
+            document.getElementById(elementBis).classList.toggle("bnj-panda-mobile-image-display");
+        }
+    </script>
+{% endblock %}
