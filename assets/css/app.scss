@@ -109,14 +109,14 @@ a {
   height: 200px;
   width: 200px;
   overflow: hidden;
-  margin: 15px 0px 15px 0px;
+  margin: 15px 0px -5px 0px;
 }
 
 .panda-container {
   height: 200px;
   width: 200px;
   overflow: hidden;
-  margin: 15px 0px 15px 0px;
+  margin: 15px 0px -5px 0px;
   transition: margin 4s linear;
 }
 
@@ -124,7 +124,7 @@ a {
   height: 200px;
   width: 200px;
   overflow: hidden;
-  margin: 15px 300px 15px 0px;
+  margin: 15px 300px -5px 0px;
   transition: margin 4s linear;
 }
 
@@ -132,7 +132,7 @@ a {
   height: 200px;
   width: 200px;
   overflow: hidden;
-  margin: 15px 0px 15px 300px;
+  margin: 15px 0px -5px 300px;
   transition: margin 4s linear;
 }
 
@@ -193,6 +193,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: solid darkgreen 15px;
 }
 
 #walk-button {
