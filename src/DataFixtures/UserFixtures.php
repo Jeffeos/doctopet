@@ -32,6 +32,7 @@ class UserFixtures extends Fixture
         $userpet = new Pet();
         $userpet->setName('userbispanda');
         $userpet->setHappiness(50);
+        $userpet->setHealth(30);
         $userpet->setUser($user);
         $userpet->setHasPills(0);
 
@@ -54,6 +55,7 @@ class UserFixtures extends Fixture
         $adminpet = new Pet();
         $adminpet->setName('adminbispanda');
         $adminpet->setHappiness(50);
+        $adminpet->setHealth(30);
         $adminpet->setUser($admin);
         $adminpet->setHasPills(0);
 
