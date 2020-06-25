@@ -78,7 +78,7 @@ class MedicineController extends AbstractController
 
         $response = $notificationManager->sendMessage();
         $return["allresponses"] = $response;
-        $return = json_encode( $return);
+        $return = json_encode($return);
 
         print("\n\nJSON received:\n");
         print($return);
