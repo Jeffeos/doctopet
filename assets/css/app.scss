@@ -37,6 +37,7 @@ a {
 .navbar-brand {
     font-family: $titlefont;
 }
+
 .doctopet-navbar {
     background-color: $primaryColor;
     color: $secondaryColor;
@@ -84,16 +85,63 @@ a {
     display: flex;
     flex-direction: column;
 
-    .health-bar {
+    .progress-health-bar {
         border: 1px solid black;
         height: 4vh;
         margin: 10px;
     }
 
-    .happiness-bar {
-        border: 1px solid black;
-        height: 4vh;
-        margin: 10px;
+    .progress-health-bar { //display background progress bar
+        height: 33px;
+        padding: 4px;
+        background-color: #191919;
+        border-radius: 16px;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+        -webkit-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+        -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+    }
+
+    .progress-health-bar:before { //display inside progress bar
+        content: '';
+        display: block;
+        position: absolute;
+        width: 41%;
+        height: 24px;
+        background: #000000;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
+    }
+
+    .progress-health-bar:after { //display stripes
+        content: '||||||||||||||||||||||||';
+        display: block;
+        position: absolute;
+        width: 79%;
+        height: 24px;
+        overflow: hidden;
+        border-radius: 12px;
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        transform: skewX(-30deg);
+        -webkit-transform: skewX(-30deg);
+        -moz-transform: skewX(-30deg);
+        -o-transform: skewX(-30deg);
+        font: bold 120px/80px sans-serif;
+        letter-spacing: -6px;
+        color: #000;
+        opacity: 0.06;
+    }
+
+    .color:before {
+        background: #099;
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#099), to(#006A6B));
+        background: -moz-linear-gradient(top, #099, #006A6B);
     }
 
     .container-pet {
@@ -127,7 +175,7 @@ a {
             height: 55px;
             width: 55px;
             border-radius: 50%;
-            background-color: #51DACF;
+            background-color: $tertiaryColor;
 
             &:focus {
                 outline: none;
@@ -153,19 +201,132 @@ a {
         flex-direction: row-reverse;
         position: relative;
 
-        .health-bar {
-            border: 1px solid black;
-            height: 4vh;
-            margin: 10px;
+        .progress-health-bar { //display background progress bar
             width: 85%;
+            height: 33px;
+            padding: 4px;
+            background-color: #191919;
+            border-radius: 16px;
+            -webkit-border-radius: 16px;
+            -moz-border-radius: 16px;
+            box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+            -webkit-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+            -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
         }
 
-        .happiness-bar {
-            border: 1px solid black;
-            height: 4vh;
-            margin: 10px;
-            width: 85%;
+        .progress-health-bar:before { //display inside progress bar
+            content: '';
+            display: block;
+            position: absolute;
+            width: 41%;
+            height: 24px;
+            background: #999;
+            border-radius: 12px;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
+            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
+            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
         }
+
+        .progress-health-bar:after { //display stripes
+            content: '||||||||||||||||||||||||';
+            display: block;
+            position: absolute;
+            width: 42%;
+            height: 24px;
+            overflow: hidden;
+            border-radius: 12px;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            transform: skewX(-30deg);
+            -webkit-transform: skewX(-30deg);
+            -moz-transform: skewX(-30deg);
+            -o-transform: skewX(-30deg);
+            font: bold 120px/80px sans-serif;
+            letter-spacing: -6px;
+            color: #000;
+            opacity: 0.06;
+        }
+
+        .color:before {
+            background: #099;
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#099), to(#006A6B));
+            background: -moz-linear-gradient(top, #099, #006A6B);
+        }
+
+        .progress-happiness-bar { //display background progress bar
+            width: 85%;
+            margin: 10px;
+            height: 31px;
+            padding: 4px;
+            background-color: #191919;
+            border-radius: 16px;
+            -webkit-border-radius: 16px;
+            -moz-border-radius: 16px;
+            box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+            -webkit-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+            -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+        }
+
+        .progress-happiness-bar:before { //display inside progress bar
+            content: '';
+            display: block;
+            position: absolute;
+            width: 41%;
+            height: 24px;
+            background: #999;
+            border-radius: 12px;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
+            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
+            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
+        }
+
+        .progress-happiness-bar:after { //display stripes
+            content: '||||||||||||||||||||||||';
+            display: block;
+            position: absolute;
+            width: 42%;
+            height: 24px;
+            overflow: hidden;
+            border-radius: 12px;
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 12px;
+            transform: skewX(-30deg);
+            -webkit-transform: skewX(-30deg);
+            -moz-transform: skewX(-30deg);
+            -o-transform: skewX(-30deg);
+            font: bold 120px/80px sans-serif;
+            letter-spacing: -6px;
+            color: #000;
+            opacity: 0.06;
+        }
+
+        .color2:before {
+            background: #4da6ff;
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4da6ff), to(#006A6B));
+            background: -moz-linear-gradient(top, #4da6ff, #006A6B);
+        }
+
+        .container-face {
+            width: 85%;
+            position: relative;
+
+            .happy-face {
+                height: 40px;
+                position: absolute;
+                right: 0;
+            }
+            .sad-face {
+                height: 40px;
+                position: absolute;
+                left: 5px;
+            }
+
+        }
+
 
         .container-left {
             margin: 10px;
@@ -206,7 +367,7 @@ a {
                 height: 110px;
                 width: 110px;
                 border-radius: 50%;
-                background-color: #51DACF;
+                background-color: $tertiaryColor;
 
                 &:focus {
                     outline: none;

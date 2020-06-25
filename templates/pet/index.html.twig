@@ -6,9 +6,13 @@
 
     <div class="bloc_page_pet">
         <div class="container-bar-pet">
-            <div class="health-bar"></div>
+            <div class="progress-health-bar color"></div>
             <div class="container-pet"></div>
-            <div class="happiness-bar"></div>
+            <div class="progress-happiness-bar color2"></div>
+            <div class="container-face">
+            <img class="happy-face" src="{{ asset('images/emoji.svg') }}" alt="Happy face">
+            <img class="sad-face" src="{{ asset('images/sad.svg') }}" alt="Sad face">
+        </div>
         </div>
         <div class="container-left">
             <div class="container-pet-infos"></div>
@@ -22,7 +26,8 @@
             <div class="container-button-pet">
                 <div class="text-button">
                     <button class="button-pet"><img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
-                                                    alt="image bamboo"></button>
+                                                    alt="image bamboo">
+                    </button>
                     <span>Eat</span>
                 </div>
                 <div class="text-button">
@@ -39,7 +44,8 @@
                 </div>
                 <div class="text-button">
                     <button class="button-pet"><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
-                                                    alt="image medoc"></button>
+                                                    alt="image medoc">
+                    </button>
                     <span>Pills</span>
                 </div>
                 <div class="text-button">
