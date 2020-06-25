@@ -169,11 +169,12 @@ a {
 .panda-container,
 .panda-container-left,
 .panda-container-right,
-.pand-container {
+.pand-container,
+.bulles-option {
   display: none;
 }
 
-.activated, .activate {
+.activated, .activate, .act {
   display: block;
 }
 
@@ -181,6 +182,26 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#walk-button {
+  z-index: -1;
+  opacity: 0;
+}
+
+.bulles {
+  display: flex;
+}
+
+.bulles-left {
+  height: 150px;
+  width: 150px;
+}
+
+.bulles-right {
+  height: 150px;
+  width: 150px;
+  transform: rotateY(180deg);
 }
 
   .bnj-container-number {
@@ -283,6 +304,9 @@ a {
     }
 
     .container-pet {
+      display: flex;
+      flex-direction: column-reverse;
+      overflow: hidden;
       border: 1px solid black;
       height: 65vh;
       margin: 0 10px;
