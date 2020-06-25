@@ -59,7 +59,7 @@
             <div class="container-button-pet">
                 <div class="text-button">
                     <button class="button-pet">
-                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
+                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}" {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} "
                                                     alt="image bamboo"></button>
                     <span>Eat ({{ pet.hasBamboo }})</span>
                 </div>
@@ -76,7 +76,7 @@
                     <span>Dance</span>
                 </div>
                 <div class="text-button">
-                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}" class="button-pet {% if pet.hasPills %}{% endif %}"><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
+                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}" class="button-pet" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %} ><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
                                                     alt="image medoc"></a>
                     <span>Pills</span>
                 </div>

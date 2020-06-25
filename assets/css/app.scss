@@ -219,17 +219,6 @@ a {
     border: 1px solid $secondaryColor;
   }
 
-  @media all and (min-width: 769px) {
-    .navbar-flex {
-      width: 100%;
-      display: flex;
-    }
-
-    .navbar-nav {
-      align-items: center;
-    }
-  }
-
   /* KEYFRAMES ANIMATIONS */
   @keyframes panda-front-dance-anim {
     0% {

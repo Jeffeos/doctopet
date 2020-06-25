@@ -7,7 +7,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto navbar-flex">
+        <ul class="navbar-nav mr-2 navbar-flex">
             <li {% if route_name == "medicine_index" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
                 <a class="nav-link" href="{{ path('medicine_index') }}" style="font-family: 'Pangolin', cursive;">My
                     Prescriptions</a>
@@ -15,7 +15,10 @@
             <li {% if route_name == "pet_index" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
                 <a class="nav-link" href="{{ path('pet_index', { 'id': 1 }) }}" style="font-family: 'Pangolin', cursive;">My Pet</a>
             </li>
-            {% if app.user %}
+        </ul>
+        <ul class="navbar-nav ml-auto navbar-flex">
+
+        {% if app.user %}
                 <li class="nav-item">
 
 
@@ -29,12 +32,12 @@
 
                         </a>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_logout') }}" style="font-family: 'Pangolin', cursive;"> Se déconnecter</a>
+                    <a class="nav-link" href="{{ path('app_logout') }}" style="font-family: 'Pangolin', cursive;"> Log out</a>
 
 
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('app_login') }}" style="font-family: 'Pangolin', cursive;"> Se connecter</a>
+                    <a class="nav-link" href="{{ path('app_login') }}" style="font-family: 'Pangolin', cursive;"> Log in</a>
             {% endif %}
 
             </li>
