@@ -67,6 +67,87 @@ a {
     text-align: center;
 }
 
+/* PANDA SECTION */
+.pand-container {
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    margin: 15px 0px 15px 0px;
+}
+.panda-container {
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    margin: 15px 0px 15px 0px;
+    transition: margin 4s linear;
+}
+.panda-container-left {
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    margin: 15px 300px 15px 0px;
+    transition: margin 4s linear;
+}
+.panda-container-right {
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    margin: 15px 0px 15px 300px;
+    transition: margin 4s linear;
+}
+
+.panda {
+    height: 200px;
+}
+
+.panda-front-dance {
+    height: 200px;
+    animation: panda-front-dance-anim 2s steps(5) infinite;
+}
+.panda-back-dance {
+    height: 200px;
+    animation: panda-back-dance-anim 3s steps(7) infinite;
+}
+.panda-shake-dance {
+    height: 200px;
+    animation: panda-shake-dance-anim 1s steps(4) infinite;
+}
+.panda-play {
+    height: 200px;
+    animation: panda-play-anim 2s steps(3) infinite;
+}
+.panda-turn-around {
+    height: 200px;
+    animation: panda-turn-anim 2s steps(5) infinite;
+}
+.panda-walk-left {
+    height: 200px;
+    animation: panda-walk-anim 1s steps(2) infinite;
+}
+.panda-walk-right {
+    height: 200px;
+    transform: rotateY(180deg);
+    animation: panda-walk-anim2 1s steps(2) infinite;
+}
+
+.anim,
+.panda-container,
+.panda-container-left,
+.panda-container-right,
+.pand-container {
+    display: none;
+}
+
+.activated, .activate {
+    display: block;
+}
+
+.panda-window-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
 @media all and (min-width: 769px) {
     .navbar-flex {
         width: 100%;
@@ -76,5 +157,39 @@ a {
     .navbar-nav {
         align-items: center;
     }
+}
+
+/* KEYFRAMES ANIMATIONS */
+@keyframes panda-front-dance-anim {
+    0% {margin-left: 0px}
+    100% {margin-left: -1000px}
+}
+@keyframes panda-back-dance-anim {
+    0% {margin-left: 0px}
+    100% {margin-left: -1400px}
+}
+@keyframes panda-play-anim {
+    0% {margin-left: 0px}
+    100% {margin-left: -600px}
+}
+@keyframes panda-shake-dance-anim {
+    0% {margin-left: 0px}
+    100% {margin-left: -800px}
+}
+@keyframes panda-turn-anim {
+    0% {margin-left: 0px}
+    100% {margin-left: -1000px}
+}
+@keyframes panda-walk-anim {
+    0% {margin-left: 0px}
+    100% {margin-left: -400px}
+}
+@keyframes panda-walk-anim2 {
+    0% {margin-left: -200px}
+    100% {margin-left: 200px}
+}
+@keyframes pandaMoveLeft {
+    from {transform: translate(0px, 0px)}
+    to {transform: translate(-200px, 0px)}
 }
 
