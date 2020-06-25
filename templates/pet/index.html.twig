@@ -3,35 +3,51 @@
 {% block title %}Pet index{% endblock %}
 
 {% block body %}
-    <h1>Pet index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Happiness</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for pet in pets %}
-            <tr>
-                <td>{{ pet.id }}</td>
-                <td>{{ pet.name }}</td>
-                <td>{{ pet.happiness }}</td>
-                <td>
-                    <a href="{{ path('pet_show', {'id': pet.id}) }}">show</a>
-                    <a href="{{ path('pet_edit', {'id': pet.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="4">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="bloc_page_pet">
+        <div class="container-bar-pet">
+            <div class="health-bar"></div>
+            <div class="container-pet"></div>
+            <div class="happiness-bar"></div>
+        </div>
+        <div class="container-left">
+            <div class="container-pet-infos"></div>
+            <div class="container-pet-name">
+                {% for pet in pets %}
+                    <h3 class="text-center">{{ pet.name }}</h3>
+                {% endfor %}
+            </div>
+            <div class="container-pet-rules"></div>
 
-    <a href="{{ path('pet_new') }}">Create new</a>
+            <div class="container-button-pet">
+                <div class="text-button">
+                    <button class="button-pet"><img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
+                                                    alt="image bamboo"></button>
+                    <span>Eat</span>
+                </div>
+                <div class="text-button">
+                    <button class="button-pet"><img src="{{ asset('images/icone_discussion.png') }}"
+                                                    alt="image bulle">
+                    </button>
+                    <span>Talk</span>
+                </div>
+                <div class="text-button">
+                    <button class="button-pet"><img src="{{ asset('images/icone_panda_danse.png') }}"
+                                                    alt="image panda">
+                    </button>
+                    <span>Dance</span>
+                </div>
+                <div class="text-button">
+                    <button class="button-pet"><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
+                                                    alt="image medoc"></button>
+                    <span>Pills</span>
+                </div>
+                <div class="text-button">
+                    <button class="button-pet"><img src="{{ asset('images/icone_panda_jeu.png') }}" alt="image panda">
+                    </button>
+                    <span>Play</span>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
