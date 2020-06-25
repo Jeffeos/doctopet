@@ -1,21 +1,36 @@
-<div class="card-body" style="width: 100vw; display: flex; justify-content: center; height: 20vh">
-    <div class="card border-info" style="width: 80vw;">
-        <div class="card-body">
+<div class="card-body" style="width: 100vw; display: flex; justify-content: center;">
+    <div class="card border-info" style="width: 80vw; height: 300px;">
+        <div class="card-body bnj-medicine-card-body" style="display: flex; flex-direction: column; justify-content: space-evenly">
             <div class="card-title" style="display: flex; justify-content: space-evenly;">
-                <img src="{{ asset('../img/pillule_bleue.png') }}" alt="pillule_bleue">
-                <h1 class="text-center" style="display: flex; align-items: center"><a style="font-size: 2em;">Card title</a></h1>
-                <img src="{{ asset('../img/pillule_rouge.png') }}" alt="pillule_rouge">
+                <img src="{{ asset('../img/pillule_bleue.png') }}" width="50" height="50" alt="pillule_bleue">
+                <h1 class="text-center" style="display: flex; align-items: center"><a>Card title</a></h1>
+                <img src="{{ asset('../img/pillule_rouge.png') }}" width="50" height="50" alt="pillule_rouge">
             </div>
 
-            <div class="card-medicine-frequence">
-                <button class="medicine-morning"></button>
-                <button class="medicine-noon"></button>
-                <button class="medicine-evening"></button>
+            <div class="card-medicine-frequence" style="display: flex; justify-content: space-evenly;">
+                <div class="medicine-morning" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
+                    <h6>Matin</h6>
+                    <input type="checkbox" checked>
+                </div>
+                <div class="medicine-noon" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
+                    <h6>Midi</h6>
+                    <input type="checkbox">
+                </div>
+                <div class="medicine-evening" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
+                    <h6>Soir</h6>
+                    <input type="checkbox" checked>
+                </div>
             </div>
 
-            <div class="card-medicine-info">
-                <div class="medicine-quantity"></div>
-                <div class="medicine-numberofdays"></div>
+            <div class="card-medicine-info" style="display: flex; justify-content: space-evenly">
+                <div class="medicine-quantity" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
+                    <h6 style="text-align: center">Quantité</h6>
+                    <div style="height: 50px; width: 50px; border-radius: 5px; display: flex; justify-content: center; align-items: center; font-size: 1.5em; font-weight: bold" class="bnj-container-number">3</div>
+                </div>
+                <div class="medicine-numberofdays" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
+                    <h6 style="text-align: center">Durée</h6>
+                    <div style="height: 50px; width: 50px; border-radius: 5px; display: flex; justify-content: center; align-items: center; font-size: 1.5em; font-weight: bold" class="bnj-container-number">7</div>
+                </div>
             </div>
 
         </div>

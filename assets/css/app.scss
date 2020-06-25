@@ -31,6 +31,16 @@ a {
     width: 40px;
 }
 
+/* MEDICINE INDEX */
+
+.bnj-medicine-card-body {
+    font-family: $titlefont;
+}
+
+.bnj-container-number {
+    border: 1px solid $secondaryColor;
+}
+
 @media all and (min-width: 769px) {
     .navbar-flex {
         width: 100%;
