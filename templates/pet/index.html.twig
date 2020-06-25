@@ -34,25 +34,22 @@
                 <div class="container-pet">
                     <div class="panda-window-container">
                         <button onclick="changeTheVariableToWalk()" id="walk-button">walk</button>
-
                         <div class="bulles">
+                        <div class="panda-talking">
                             <div>
-                                <img class="bulles-option bulles-left act"
-                                     src="{{ asset('/img/panda-bulles/heart.png') }}">
-                                <img class="bulles-option bulles-left"
-                                     src="{{ asset('/img/panda-bulles/brokenheart.png') }}">
-                                <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
-                                <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                                <img id="bubble-points" class="bulles-option bulles-left bulle-anim " src="{{ asset('/img/panda-bulles/panda-bubble-talking.png') }}">
+                                <img class="bulles-option bulles-left bulle-anim2" src="{{ asset('/img/panda-bulles/panda-bubble-hearts (1).png') }}">
                             </div>
-                            <div>
-                                <img class="bulles-option bulles-right act"
-                                     src="{{ asset('/img/panda-bulles/happyface.png') }}">
-                                <img class="bulles-option bulles-right"
-                                     src="{{ asset('/img/panda-bulles/bofface.png') }}">
-                                <img class="bulles-option bulles-right"
-                                     src="{{ asset('/img/panda-bulles/sadface.png') }}">
-                            </div>
-
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/brokenheart.png') }}">
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                        </div>
+                        <div>
+                            <img class="bulles-option bulles-right" src="{{ asset('/img/panda-bulles/happyface.png') }}">
+                            <img class="bulles-option bulles-right" src="{{ asset('/img/panda-bulles/bofface.png') }}">
+                            <img class="bulles-option bulles-right" src="{{ asset('/img/panda-bulles/sadface.png') }}">
+                        </div>
                         </div>
 
                         <div id="panda-move" class="panda-container activate">
@@ -101,7 +98,8 @@
                     <span>Eat ({{ pet.hasBamboo }})</span>
                 </div>
                 <div class="text-button">
-                    <button class="button-pet"><img src="{{ asset('images/icone_discussion.png') }}"
+                    <button id="btn-bubble" onclick="toggleTalking()"
+                            class="button-pet"><img src="{{ asset('images/icone_discussion.png') }}"
                                                     alt="image bulle">
                     </button>
                     <span>Talk</span>
@@ -155,12 +153,27 @@
         let currentDanceState = 'danceFront'
         let walkDirection = "left"
         let i = 0
+        let isTalking = false
+        let ij = 0
 
         setInterval(function () {
             let active = document.getElementsByClassName('activated')
             active[0].classList.toggle("activated")
             let actived = document.getElementsByClassName('activate')
             actived[0].classList.toggle("activate")
+
+            if (isTalking && ij < 4) {
+                document.getElementById("bubble-points").classList.add("active-talk")
+                ij++
+            } else if (isTalking && ij < 8) {
+                document.getElementsByClassName("bulles-right")[0].classList.add("active-talk")
+                ij++
+            } else if (ij == 8) {
+                ij = 0
+                document.getElementsByClassName("active-talk")[0].classList.toggle("active-talk")
+                document.getElementsByClassName("active-talk")[0].classList.toggle("active-talk")
+                isTalking = false
+            }
 
             switch (currentState) {
                 case "walkState":
@@ -194,7 +207,7 @@
                         i = 0
                     }
 
-                    if (walkDirection == 'left')
+                    if (walkDirection === 'left')
                         document.getElementById('panda-walk-left').classList.add("activated")
                     else
                         document.getElementById('panda-walk-right').classList.add("activated")
@@ -240,6 +253,10 @@
         function changeTheVariableToDance() {
             currentState = 'danceState';
             console.log('dance')
+        }
+
+        function toggleTalking() {
+            isTalking = true
         }
 
     </script>
