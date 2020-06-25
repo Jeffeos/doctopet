@@ -15,12 +15,27 @@ class MedicineType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', null, ['label' => "Medicine name"])
+            ->add('name', null, [
+                'label' => "Medicine name",
+                'attr' => [
+                    'placeholder' => 'ex: Doliprane 500',
+                ],
+            ])
             ->add('morning')
             ->add('noon')
             ->add('evening')
-            ->add('quantity', null, ['label' => "Number of pills per intake"])
-            ->add('numberOfDays', null, ['label' => "Days of treatment"])
+            ->add('quantity', null, [
+                'label' => "Number of pills per intake",
+                'attr' => [
+                    'placeholder' => 'ex: 2',
+                ],
+            ])
+            ->add('numberOfDays', null, [
+                'label' => "Days of treatment",
+                'attr' => [
+                    'placeholder' => 'ex: 7',
+                ],
+            ])
             ->add('user', HiddenType::class)
         ;
     }
