@@ -334,9 +334,13 @@ a {
       display: flex;
       flex-direction: column-reverse;
       overflow: hidden;
-      border: 1px solid black;
+      border: 6px solid black;
       height: 65vh;
       margin: 0 10px;
+      background-position-y: bottom;
+      background-size: cover;
+      background-image: url(/img/fondbaboo.png);
+      background-color: burlywood;
     }
 
     .container-pet-name {
@@ -411,7 +415,7 @@ a {
       }
 
       .container-pet {
-        border: 1px solid black;
+        border: 6px solid black;
         height: 65vh;
         margin: 10px;
         width: 85%;
