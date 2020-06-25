@@ -159,27 +159,17 @@ a {
         width: 20%;
     }
 
-    .container-face {
-        width: 98%;
-        height: 40px;
-        position: relative;
-
-        .happy-face {
-            height: 30px;
-            position: absolute;
-            right: 0;
-        }
-        .sad-face {
-            height: 30px;
-            position: absolute;
-            left: 5px;
-        }
+    .text-progress {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .container-pet {
         border: 1px solid black;
         height: 50vh;
         margin: 0 10px;
+        width: 100%;
     }
 
     .container-pet-name {
@@ -239,6 +229,8 @@ a {
 
         .progress-health-bar { //display background progress bar
             width: 85%;
+            margin-left: auto;
+            margin-right: auto;
             height: 33px;
             padding: 4px;
             background-color: #191919;
@@ -259,7 +251,8 @@ a {
 
         .progress-happiness-bar { //display background progress bar
             width: 85%;
-            margin: 10px;
+            margin-left: auto;
+            margin-right: auto;
             height: 31px;
             padding: 4px;
             background-color: #191919;
@@ -278,20 +271,10 @@ a {
             width: 20%;
         }
 
-        .container-face {
-            width: 85%;
-            position: relative;
-
-            .happy-face {
-                height: 40px;
-                position: absolute;
-                right: 0;
-            }
-            .sad-face {
-                height: 40px;
-                position: absolute;
-                left: 5px;
-            }
+        .text-progress {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .container-left {
