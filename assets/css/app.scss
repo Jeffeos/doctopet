@@ -5,7 +5,7 @@ $primaryColor: #41AAA8;
 $secondaryColor: #2C003E;
 $tertiaryColor: #51DACF;
 
-$titlefont: 'Montserrat', cursive;
+$titlefont: 'Pangolin', cursive;
 
 body {
     background-color: #E5E5E5;
@@ -49,9 +49,33 @@ a {
 }
 
 /* MEDICINE INDEX PAGE */
+
+.bnj-medicine-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bnj-card-border {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 16px;
+}
+
+.bnj-medicine-card-body-container {
+    font-family: $titlefont;
+    display: flex;
+    justify-content: center;
+}
+
 .medicine-button {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .time-of-day {
@@ -67,12 +91,9 @@ a {
     text-align: center;
 }
 
-.bnj-medicine-card-body {
-    font-family: $titlefont;
-}
-
 .bnj-container-number {
     border: 1px solid $secondaryColor;
+}
 
 @media all and (min-width: 769px) {
     .navbar-flex {
@@ -83,5 +104,44 @@ a {
     .navbar-nav {
         align-items: center;
     }
+}
+
+@media all and (min-width: 992px) {
+
+    .bnj-medicine-card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+
+    .bnj-card-border {
+        width: 40%;
+    }
+
+    .bnj-medicine-form-desktop {
+        display: flex;
+    }
+
+    .time-of-day {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bnj-timeofday-desktop {
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bnj-timeofday-desktop:nth-child(2) {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+
 }
 

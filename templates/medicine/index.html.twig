@@ -3,45 +3,14 @@
 {% block title %}Medicine index{% endblock %}
 
 {% block body %}
-    <h1>Add a new medicine</h1>
+    <h1 style="font-family: 'Pangolin', cursive;">Add a new medicine</h1>
 
     {{ include('medicine/_form.html.twig', {'button_label': 'Update'}) }}
 
-    {# ADD HERE THE CARDS DISPLAY #}
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Morning</th>
-                <th>Noon</th>
-                <th>Evening</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for medicine in medicines %}
-            <tr>
-                <td>{{ medicine.id }}</td>
-                <td>{{ medicine.name }}</td>
-                <td>{{ medicine.morning ? 'Yes' : 'No' }}</td>
-                <td>{{ medicine.noon ? 'Yes' : 'No' }}</td>
-                <td>{{ medicine.evening ? 'Yes' : 'No' }}</td>
-                <td>
-                    <a href="{{ path('medicine_show', {'id': medicine.id}) }}">show</a>
-                    <a href="{{ path('medicine_edit', {'id': medicine.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('medicine_new') }}">Create new</a>
-
-    {% include 'medicine/_medicine_card.html.twig' %}
+    {% if medicines %}
+        <div class="bnj-medicine-card-container">
+            {% include 'medicine/_medicine_card.html.twig' %}
+        </div>
+    {% endif %}
 
 {% endblock %}
