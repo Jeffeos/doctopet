@@ -50,6 +50,17 @@ a {
   width: 40px;
 }
 
+.introduction {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.25rem;
+
+  p {
+    padding: 12px;
+  }
+}
+
 /* MEDICINE INDEX PAGE */
 
 .bnj-medicine-card-container {
