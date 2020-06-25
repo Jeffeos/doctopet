@@ -109,7 +109,7 @@ class PetController extends AbstractController
     public function takePill(Pet $pet): Response
     {
         $pet->setHasPills(false);
-        $pet->setHappiness($pet->getHappiness()+20);
+        $pet->setHealth($pet->getHealth()+20);
         $this->getDoctrine()->getManager()->flush();
 
         return $this->redirectToRoute('pet_index', ['id' => 1] );

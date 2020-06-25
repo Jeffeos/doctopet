@@ -37,6 +37,11 @@ class Pet
      */
     private $hasPills;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $health;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -91,6 +96,18 @@ class Pet
     public function setHasPills(bool $hasPills): self
     {
         $this->hasPills = $hasPills;
+
+        return $this;
+    }
+
+    public function getHealth(): ?int
+    {
+        return $this->health;
+    }
+
+    public function setHealth(int $health): self
+    {
+        $this->health = $health;
 
         return $this;
     }

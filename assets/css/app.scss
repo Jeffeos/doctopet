@@ -132,50 +132,53 @@ a {
         -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
     }
 
-    .progress-health-bar:before { //display inside progress bar
-        content: '';
-        display: block;
-        position: absolute;
-        width: 41%;
+    .inside-progress-health-bar-pet { //display inside progress bar
+        background-color: $primaryColor;
         height: 24px;
-        background: #000000;
-        border-radius: 12px;
-        -webkit-border-radius: 12px;
-        -moz-border-radius: 12px;
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
-        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
-        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
+        border-radius: 15px;
+        width: 20%;
     }
 
-    .progress-health-bar:after { //display stripes
-        content: '||||||||||||||||||||||||';
-        display: block;
-        position: absolute;
-        width: 79%;
-        height: 24px;
-        overflow: hidden;
-        border-radius: 12px;
-        -webkit-border-radius: 12px;
-        -moz-border-radius: 12px;
-        transform: skewX(-30deg);
-        -webkit-transform: skewX(-30deg);
-        -moz-transform: skewX(-30deg);
-        -o-transform: skewX(-30deg);
-        font: bold 120px/80px sans-serif;
-        letter-spacing: -6px;
-        color: #000;
-        opacity: 0.06;
+    .progress-happiness-bar { //display background progress bar
+        margin: 10px;
+        height: 31px;
+        padding: 4px;
+        background-color: #191919;
+        border-radius: 16px;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+        -webkit-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+        -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
     }
 
-    .color:before {
-        background: #099;
-        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#099), to(#006A6B));
-        background: -moz-linear-gradient(top, #099, #006A6B);
+    .inside-progress-happiness-bar-pet { //display inside progress bar
+        background-color: blue;
+        height: 24px;
+        border-radius: 15px;
+        width: 20%;
+    }
+
+    .container-face {
+        width: 98%;
+        height: 40px;
+        position: relative;
+
+        .happy-face {
+            height: 30px;
+            position: absolute;
+            right: 0;
+        }
+        .sad-face {
+            height: 30px;
+            position: absolute;
+            left: 5px;
+        }
     }
 
     .container-pet {
         border: 1px solid black;
-        height: 65vh;
+        height: 50vh;
         margin: 0 10px;
     }
 
@@ -214,6 +217,10 @@ a {
                 height: 3.5vh;
             }
 
+            .pills {
+                height: 6.5vh;
+            }
+
             .bamboo {
                 height: 6vh;
             }
@@ -243,45 +250,11 @@ a {
             -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
         }
 
-        .progress-health-bar:before { //display inside progress bar
-            content: '';
-            display: block;
-            position: absolute;
-            width: 41%;
+        .inside-progress-health-bar-pet { //display inside progress bar
+            background-color: $primaryColor;
             height: 24px;
-            background: #999;
-            border-radius: 12px;
-            -webkit-border-radius: 12px;
-            -moz-border-radius: 12px;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
-            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
-            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
-        }
-
-        .progress-health-bar:after { //display stripes
-            content: '||||||||||||||||||||||||';
-            display: block;
-            position: absolute;
-            width: 42%;
-            height: 24px;
-            overflow: hidden;
-            border-radius: 12px;
-            -webkit-border-radius: 12px;
-            -moz-border-radius: 12px;
-            transform: skewX(-30deg);
-            -webkit-transform: skewX(-30deg);
-            -moz-transform: skewX(-30deg);
-            -o-transform: skewX(-30deg);
-            font: bold 120px/80px sans-serif;
-            letter-spacing: -6px;
-            color: #000;
-            opacity: 0.06;
-        }
-
-        .color:before {
-            background: #099;
-            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#099), to(#006A6B));
-            background: -moz-linear-gradient(top, #099, #006A6B);
+            border-radius: 15px;
+            width: 20%;
         }
 
         .progress-happiness-bar { //display background progress bar
@@ -298,45 +271,11 @@ a {
             -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
         }
 
-        .progress-happiness-bar:before { //display inside progress bar
-            content: '';
-            display: block;
-            position: absolute;
-            width: 41%;
+        .inside-progress-happiness-bar-pet { //display inside progress bar
+            background-color: blue;
             height: 24px;
-            background: #999;
-            border-radius: 12px;
-            -webkit-border-radius: 12px;
-            -moz-border-radius: 12px;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
-            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
-            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
-        }
-
-        .progress-happiness-bar:after { //display stripes
-            content: '||||||||||||||||||||||||';
-            display: block;
-            position: absolute;
-            width: 42%;
-            height: 24px;
-            overflow: hidden;
-            border-radius: 12px;
-            -webkit-border-radius: 12px;
-            -moz-border-radius: 12px;
-            transform: skewX(-30deg);
-            -webkit-transform: skewX(-30deg);
-            -moz-transform: skewX(-30deg);
-            -o-transform: skewX(-30deg);
-            font: bold 120px/80px sans-serif;
-            letter-spacing: -6px;
-            color: #000;
-            opacity: 0.06;
-        }
-
-        .color2:before {
-            background: #4da6ff;
-            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4da6ff), to(#006A6B));
-            background: -moz-linear-gradient(top, #4da6ff, #006A6B);
+            border-radius: 15px;
+            width: 20%;
         }
 
         .container-face {
@@ -353,9 +292,7 @@ a {
                 position: absolute;
                 left: 5px;
             }
-
         }
-
 
         .container-left {
             margin: 10px;
@@ -408,6 +345,10 @@ a {
 
                 .bamboo {
                     height: 80px;
+                }
+
+                .pills {
+                    height: 115px;
                 }
             }
         }
