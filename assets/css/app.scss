@@ -8,100 +8,100 @@ $tertiaryColor: #51DACF;
 $titlefont: 'Pangolin', cursive;
 
 body {
-  background-color: #E5E5E5;
-  font-family: $titlefont;
+    background-color: #E5E5E5;
+    font-family: $titlefont;
 }
 
 h1 {
-  text-align: center;
-  padding: 30px;
+    text-align: center;
+    padding: 30px;
 }
 
 a {
-  color: #2C003E;
-  padding: 0;
-  font-family: $titlefont;
+    color: #2C003E;
+    padding: 0;
+    font-family: $titlefont;
 }
 
 .btn {
-  background-color: $tertiaryColor;
-  color: $secondaryColor;
+    background-color: $tertiaryColor;
+    color: $secondaryColor;
 }
 
 .body-container {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar-brand {
-  font-family: $titlefont;
-  margin-left: 20px;
+    font-family: $titlefont;
+    margin-left: 20px;
 }
 
 .doctopet-navbar {
-  background-color: $primaryColor;
-  color: $secondaryColor;
+    background-color: $primaryColor;
+    color: $secondaryColor;
 }
 
 /* NAVBAR */
 .doctopet-logo {
-  height: 40px;
-  width: 40px;
+    height: 40px;
+    width: 40px;
 }
 
 .introduction {
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.25rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25rem;
 
-  p {
-    padding: 12px;
-  }
+    p {
+        padding: 12px;
+    }
 }
 
 /* MEDICINE INDEX PAGE */
 
 .bnj-medicine-card-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .bnj-card-border {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  border-radius: 16px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 16px;
 }
 
 .bnj-medicine-card-body-container {
-  font-family: $titlefont;
-  display: flex;
-  justify-content: center;
+    font-family: $titlefont;
+    display: flex;
+    justify-content: center;
 }
 
 .medicine-button {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .time-of-day {
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 /* PANDA SECTION */
@@ -137,43 +137,43 @@ a {
 }
 
 .panda {
-  height: 200px;
+    height: 200px;
 }
 
 .panda-front-dance {
-  height: 200px;
-  animation: panda-front-dance-anim 2s steps(5) infinite;
+    height: 200px;
+    animation: panda-front-dance-anim 2s steps(5) infinite;
 }
 
 .panda-back-dance {
-  height: 200px;
-  animation: panda-back-dance-anim 3s steps(7) infinite;
+    height: 200px;
+    animation: panda-back-dance-anim 3s steps(7) infinite;
 }
 
 .panda-shake-dance {
-  height: 200px;
-  animation: panda-shake-dance-anim 1s steps(4) infinite;
+    height: 200px;
+    animation: panda-shake-dance-anim 1s steps(4) infinite;
 }
 
 .panda-play {
-  height: 200px;
-  animation: panda-play-anim 2s steps(3) infinite;
+    height: 200px;
+    animation: panda-play-anim 2s steps(3) infinite;
 }
 
 .panda-turn-around {
-  height: 200px;
-  animation: panda-turn-anim 2s steps(5) infinite;
+    height: 200px;
+    animation: panda-turn-anim 2s steps(5) infinite;
 }
 
 .panda-walk-left {
-  height: 200px;
-  animation: panda-walk-anim 1s steps(2) infinite;
+    height: 200px;
+    animation: panda-walk-anim 1s steps(2) infinite;
 }
 
 .panda-walk-right {
-  height: 200px;
-  transform: rotateY(180deg);
-  animation: panda-walk-anim2 1s steps(2) infinite;
+    height: 200px;
+    transform: rotateY(180deg);
+    animation: panda-walk-anim2 1s steps(2) infinite;
 }
 
 .anim,
@@ -182,7 +182,7 @@ a {
 .panda-container-right,
 .pand-container,
 .bulles-option {
-  display: none;
+    display: none;
 }
 
 .activated, .activate, .active-talk {
@@ -197,12 +197,12 @@ a {
 }
 
 #walk-button {
-  z-index: -1;
-  opacity: 0;
+    z-index: -1;
+    opacity: 0;
 }
 
 .bulles {
-  display: flex;
+    display: flex;
 }
 
 .bulles-left {
@@ -228,64 +228,81 @@ a {
 }
 
   .bnj-container-number {
-    border: 1px solid $secondaryColor;
-  }
+    height: 150px;
+    width: 150px;
+}
 
-  /* KEYFRAMES ANIMATIONS */
-  @keyframes panda-front-dance-anim {
+.bulles-right {
+    height: 150px;
+    width: 150px;
+    transform: rotateY(180deg);
+}
+
+.bnj-container-number {
+    border: 1px solid $secondaryColor;
+}
+
+/* KEYFRAMES ANIMATIONS */
+@keyframes panda-front-dance-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -1000px
+        margin-left: -1000px
     }
-  }
-  @keyframes panda-back-dance-anim {
+}
+
+@keyframes panda-back-dance-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -1400px
+        margin-left: -1400px
     }
-  }
-  @keyframes panda-play-anim {
+}
+
+@keyframes panda-play-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -600px
+        margin-left: -600px
     }
-  }
-  @keyframes panda-shake-dance-anim {
+}
+
+@keyframes panda-shake-dance-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -800px
+        margin-left: -800px
     }
-  }
-  @keyframes panda-turn-anim {
+}
+
+@keyframes panda-turn-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -1000px
+        margin-left: -1000px
     }
-  }
-  @keyframes panda-walk-anim {
+}
+
+@keyframes panda-walk-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -400px
+        margin-left: -400px
     }
-  }
-  @keyframes panda-walk-anim2 {
+}
+
+@keyframes panda-walk-anim2 {
     0% {
-      margin-left: -200px
+        margin-left: -200px
     }
     100% {
-      margin-left: 200px
+        margin-left: 200px
     }
   }
   @keyframes pandaTalk {
@@ -313,22 +330,28 @@ a {
   }
 }
 
-  //MOBILE VIEW GAME INDEX
-  .bloc_page_pet {
+//MOBILE VIEW GAME INDEX
+.bloc_page_pet {
     margin: 10px;
     display: flex;
     flex-direction: column;
 
-    .health-bar {
-      border: 1px solid black;
-      height: 4vh;
-      margin: 10px;
+    .progress-health-bar {
+        border: 1px solid black;
+        height: 4vh;
+        margin: 10px;
     }
 
-    .happiness-bar {
-      border: 1px solid black;
-      height: 4vh;
-      margin: 10px;
+    .progress-health-bar { //display background progress bar
+        height: 33px;
+        padding: 4px;
+        background-color: #191919;
+        border-radius: 16px;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+        -webkit-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+        -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
     }
 
     .container-pet {
@@ -342,79 +365,123 @@ a {
       background-size: cover;
       background-image: url(/img/fondbaboo.png);
       background-color: burlywood;
+
+    .inside-progress-health-bar-pet { //display inside progress bar
+        background-color: $primaryColor;
+        height: 24px;
+        border-radius: 15px;
+        width: 20%;
+
+    }
+
+    .progress-happiness-bar { //display background progress bar
+        margin: 10px;
+        height: 31px;
+        padding: 4px;
+        background-color: #191919;
+        border-radius: 16px;
+        -webkit-border-radius: 16px;
+        -moz-border-radius: 16px;
+        box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+        -webkit-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+        -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+    }
+
+    .inside-progress-happiness-bar-pet { //display inside progress bar
+        background-color: blue;
+        height: 24px;
+        border-radius: 15px;
+        width: 20%;
+    }
+
+    .text-progress {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-pet {
+        border: 1px solid black;
+        height: 50vh;
+        margin: 0 10px;
+        width: 100%;
     }
 
     .container-pet-name {
-      margin: 0 10px;
-      border: 1px solid black;
+        margin: 0 10px;
+        border: 1px solid black;
     }
 
     .container-button-pet {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      margin: 10px;
-
-      .text-button {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 10px;
 
-      .button-pet {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid black;
-        height: 55px;
-        width: 55px;
-        border-radius: 50%;
-        background-color: #51DACF;
-
-        &:focus {
-          outline: none;
+        .text-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        img {
-          height: 3.5vh;
-        }
+        .button-pet {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid black;
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            background-color: $tertiaryColor;
 
-        .bamboo {
-          height: 6vh;
+            &:focus {
+                outline: none;
+            }
+
+            img {
+                height: 3.5vh;
+            }
+
+            .pills {
+                height: 6.5vh;
+            }
+
+            .bamboo {
+                height: 6vh;
+            }
         }
-      }
     }
-  }
+}
 
-  //DESKTOP VIEW GAME INDEX
-  @media all and (min-width: 769px) {
+//DESKTOP VIEW GAME INDEX
+@media all and (min-width: 769px) {
 
     .bloc_page_pet {
-      margin: 10px;
-      display: flex;
-      flex-direction: row-reverse;
-      position: relative;
-
-      .health-bar {
-        border: 1px solid black;
-        height: 4vh;
-        margin: 10px;
-        width: 85%;
-      }
-
-      .happiness-bar {
-        border: 1px solid black;
-        height: 4vh;
-        margin: 10px;
-        width: 85%;
-      }
-
-      .container-left {
         margin: 10px;
         display: flex;
-        flex-direction: column;
-      }
+        flex-direction: row-reverse;
+        position: relative;
 
+        .health-bar {
+            border: 1px solid black;
+            height: 4vh;
+            margin: 10px;
+            width: 85%;
+        }
+
+        .happiness-bar {
+            border: 1px solid black;
+            height: 4vh;
+            margin: 10px;
+            width: 85%;
+        }
+
+        .container-left {
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+      
       .container-pet {
         border: 6px solid black;
         height: 65vh;
@@ -422,99 +489,167 @@ a {
         width: 85%;
       }
 
-      .container-pet-name {
-        margin: 0 10px;
-        border: 1px solid black;
-      }
-
-      .container-button-pet {
-        display: flex;
-        justify-content: space-around;
-        height: 40%;
-
-        .text-button:nth-child(2) {
-          align-self: flex-end;
+        .progress-health-bar { //display background progress bar
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 33px;
+            padding: 4px;
+            background-color: #191919;
+            border-radius: 16px;
+            -webkit-border-radius: 16px;
+            -moz-border-radius: 16px;
+            box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+            -webkit-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+            -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
         }
 
-        .text-button:nth-child(4) {
-          align-self: flex-end;
+        .inside-progress-health-bar-pet { //display inside progress bar
+            background-color: $primaryColor;
+            height: 24px;
+            border-radius: 15px;
+            width: 20%;
         }
 
-        .button-pet {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 1px solid black;
-          height: 110px;
-          width: 110px;
-          border-radius: 50%;
-          background-color: #51DACF;
-
-          &:focus {
-            outline: none;
-          }
-
-          img {
-            height: 6.5vh;
-          }
-
-          .bamboo {
-            height: 80px;
-          }
+        .progress-happiness-bar { //display background progress bar
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 31px;
+            padding: 4px;
+            background-color: #191919;
+            border-radius: 16px;
+            -webkit-border-radius: 16px;
+            -moz-border-radius: 16px;
+            box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+            -webkit-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+            -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
         }
-      }
 
-      .container-pet-rules {
-        border: 1px solid black;
-        height: 350px;
-        margin: 10px;
-      }
+        .inside-progress-happiness-bar-pet { //display inside progress bar
+            background-color: blue;
+            height: 24px;
+            border-radius: 15px;
+            width: 20%;
+        }
 
-      .container-pet-name {
-        border: 1px solid black;
-      }
+        .text-progress {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-      .container-bar-pet {
-        width: 65%;
-        display: flex;
-        flex-direction: column;
-      }
+        .container-pet-name {
+            margin: 0 10px;
+            border: 1px solid black;
+        }
+
+        .text-button {
+            span {
+                margin-top: 8px;
+            }
+
+        }
+
+        .container-button-pet {
+            display: flex;
+            justify-content: space-around;
+            height: 40%;
+
+            .text-button:nth-child(2) {
+                align-self: flex-end;
+            }
+
+            .text-button:nth-child(4) {
+                align-self: flex-end;
+            }
+
+            .container-button-pet {
+                display: flex;
+                justify-content: space-around;
+                height: 40%;
+            }
+
+            .button-pet {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 5px solid black;
+                box-shadow: 8px 8px black;
+                height: 110px;
+                width: 110px;
+                border-radius: 50%;
+                background-color: #51DACF;
+
+                &:focus {
+                    outline: none;
+                }
+
+                img {
+                    height: 6.5vh;
+                }
+
+                .bamboo {
+                    height: 80px;
+                }
+
+                .pills {
+                    height: 115px;
+                }
+            }
+        }
+
+        .container-pet-rules {
+            border: 1px solid black;
+            height: 350px;
+            margin: 10px;
+        }
+
+        .container-pet-name {
+            border: 1px solid black;
+        }
+
+        .container-bar-pet {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+        }
     }
-  }
+}
 
-  @media all and (min-width: 992px) {
+@media all and (min-width: 992px) {
 
     .bnj-medicine-card-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
-      flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
     .bnj-card-border {
-      width: 40%;
+        width: 40%;
     }
 
     .bnj-medicine-form-desktop {
-      display: flex;
+        display: flex;
     }
 
     .time-of-day {
-      display: flex;
-      flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
 
     .bnj-timeofday-desktop {
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .bnj-timeofday-desktop:nth-child(2) {
-      display: flex;
-      justify-content: flex-start;
+        display: flex;
+        justify-content: flex-start;
     }
 
-  }
+}
