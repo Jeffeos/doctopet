@@ -7,6 +7,7 @@ use App\Entity\User;
 use App\Form\MedicineType;
 use App\Repository\MedicineRepository;
 use App\Repository\UserRepository;
+use App\service\NotificationManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -67,6 +68,26 @@ class MedicineController extends AbstractController
     }
 
     /**
+     * @Route("/send", name="medicine_send")
+     * @param NotificationManager $notificationManager
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     */
+    public function send(MedicineRepository $medicineRepository, NotificationManager $notificationManager)
+    {
+        $medicineRepository->findOneBy([]);
+
+        $response = $notificationManager->sendMessage();
+        $return["allresponses"] = $response;
+        $return = json_encode( $return);
+
+        print("\n\nJSON received:\n");
+        print($return);
+        print("\n");
+
+        return $this->redirectToRoute('medicine_index');
+    }
+
+    /**
      * @Route("/{id}", name="medicine_show", methods={"GET"})
      */
     public function show(Medicine $medicine): Response
@@ -109,4 +130,5 @@ class MedicineController extends AbstractController
 
         return $this->redirectToRoute('medicine_index');
     }
+
 }

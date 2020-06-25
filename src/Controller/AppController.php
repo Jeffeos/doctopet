@@ -13,6 +13,7 @@ class AppController extends AbstractController
      */
     public function index() :Response
     {
+        var_dump(function_exists("curl_init"));
         return $this->render('home.html.twig');
     }
 }
