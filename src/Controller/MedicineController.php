@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Medicine;
+use App\Entity\User;
 use App\Form\MedicineType;
 use App\Repository\MedicineRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,12 +17,27 @@ use Symfony\Component\Routing\Annotation\Route;
 class MedicineController extends AbstractController
 {
     /**
-     * @Route("/", name="medicine_index", methods={"GET"})
+     * @Route("/", name="medicine_index", methods={"GET","POST"})
      */
-    public function index(MedicineRepository $medicineRepository): Response
+    public function index(MedicineRepository $medicineRepository, User $user, Request $request): Response
     {
+        $medicine = new Medicine();
+        $form = $this->createForm(MedicineType::class, $medicine);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $medicine->setUser($user);
+            $entityManager->persist($medicine);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('medicine_index');
+        }
+
         return $this->render('medicine/index.html.twig', [
             'medicines' => $medicineRepository->findAll(),
+            'medicine' => $medicine,
+            'form' => $form->createView(),
         ]);
     }
 

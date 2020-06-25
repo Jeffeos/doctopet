@@ -1,4 +1,16 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">{{ form_row(form.name) }}</div>
+            <div class="row time-of-day">
+                <div class="col">{{ form_row(form.morning) }}</div>
+                <div class="col">{{ form_row(form.noon) }}</div>
+                <div class="col">{{ form_row(form.evening) }}</div>
+            </div>
+            <div class="col-sm-12">{{ form_row(form.quantity) }}</div>
+            <div class="col-sm-12">{{ form_row(form.numberOfDays) }}</div>
+        </div>
+    </div>
+
+    <div class="medicine-button"><button class="btn">{{ button_label|default('Add this medicine') }}</button></div>
 {{ form_end(form) }}
