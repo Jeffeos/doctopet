@@ -29,8 +29,8 @@
     <body>
         <div class="body-container">
             {% block body %}{% endblock %}
+            {{ encore_entry_script_tags('app') }}
             {% block javascripts %}
-                {{ encore_entry_script_tags('app') }}
             {% endblock %}
         </div>
     </body>

@@ -35,6 +35,7 @@ class UserFixtures extends Fixture
         $userpet->setHealth(30);
         $userpet->setUser($user);
         $userpet->setHasPills(0);
+
         $manager->persist($userpet);
 
         $user->setPet($userpet);

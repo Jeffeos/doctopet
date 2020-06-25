@@ -37,6 +37,47 @@
             <div class="progress-happiness-bar">
                 <div class="inside-progress-happiness-bar-pet" style="width:{{ progressHappiness }}"></div>
             </div>
+            <div class="health-bar"></div>
+            <div class="container-pet">
+                <div class="panda-window-container">
+                    <button onclick="changeTheVariableToWalk()" id="walk-button">walk</button>
+
+                    <div class="bulles">
+                        <div>
+                            <img class="bulles-option bulles-left act" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/brokenheart.png') }}">
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                        </div>
+                        <div>
+                            <img class="bulles-option bulles-right act" src="{{ asset('/img/panda-bulles/happyface.png') }}">
+                            <img class="bulles-option bulles-right" src="{{ asset('/img/panda-bulles/bofface.png') }}">
+                            <img class="bulles-option bulles-right" src="{{ asset('/img/panda-bulles/sadface.png') }}">
+                        </div>
+
+                    </div>
+
+                    <div id="panda-move" class="panda-container activate">
+                        <img id="panda-walk-left" class="panda-walk-left anim activated"
+                             src="{{ asset('/img/panda-sprites/panda-walk-left.png') }}">
+                        <img id="panda-walk-right" class="panda-walk-right anim "
+                             src="{{ asset('/img/panda-sprites/panda-walk-left.png') }}">
+                    </div>
+                    <div id="panda-stay" class="pand-container ">
+                        <img id="panda-front" class="panda anim activated"
+                             src="{{ asset('/img/panda-sprites/panda-front.png') }}">
+                        <img id="panda-front-dance" class="panda-front-dance anim "
+                             src="{{ asset('/img/panda-sprites/panda-front-dance.png') }}">
+                        <img id="panda-back-dance" class="panda-back-dance anim "
+                             src="{{ asset('/img/panda-sprites/panda-back-dance.png') }}">
+                        <img id="panda-shake-dance" class="panda-shake-dance anim "
+                             src="{{ asset('/img/panda-sprites/panda-shake.png') }}">
+                        <img id="panda-play" class="panda-play anim " src="{{ asset('/img/panda-sprites/panda-circus.png') }}">
+                        <img id="panda-turn-around" class="panda-turn-around anim"
+                             src="{{ asset('/img/panda-sprites/panda-turn-around.png') }}">
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container-left">
             <div class="container-pet-infos"></div>
@@ -47,10 +88,10 @@
 
             <div class="container-button-pet">
                 <div class="text-button">
-                    <button class="button-pet"><img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
-                                                    alt="image bamboo">
-                    </button>
-                    <span>Eat</span>
+                    <button class="button-pet">
+                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}" {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} "
+                                                    alt="image bamboo"></button>
+                    <span>Eat ({{ pet.hasBamboo }})</span>
                 </div>
                 <div class="text-button">
                     <button class="button-pet"><img src="{{ asset('images/icone_discussion.png') }}"
@@ -59,24 +100,144 @@
                     <span>Talk</span>
                 </div>
                 <div class="text-button">
-                    <button class="button-pet"><img src="{{ asset('images/icone_panda_danse.png') }}"
+                    <button class="button-pet" onclick="changeTheVariableToDance()" id="dance-button"><img src="{{ asset('images/icone_panda_danse.png') }}"
                                                     alt="image panda">
                     </button>
                     <span>Dance</span>
                 </div>
                 <div class="text-button">
-                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}"
-                       class="button-pet {% if pet.hasPills %}{% endif %}"><img class="pills"
-                                                                                src="{{ asset('img/pillule_rouge.png') }}"
-                                                                                alt="image medoc"></a>
+
+                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}" class="button-pet" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %} ><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
+                                                    alt="image medoc"></a>
                     <span>Pills</span>
                 </div>
                 <div class="text-button">
-                    <button class="button-pet"><img src="{{ asset('images/icone_panda_jeu.png') }}" alt="image panda">
+                    <button class="button-pet" onclick="changeTheVariableToPlay()" id="play-button"><img src="{{ asset('images/icone_panda_jeu.png') }}" alt="image panda">
                     </button>
                     <span>Play</span>
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        const petStates = [
+            'danceState',
+            'walkState',
+            'playState',
+            'idleState',
+        ]
+        const danceStates = [
+            'danceFront',
+            'danceBack',
+            'danceShake',
+        ]
+        const moveState = [
+            'walkLeft',
+            'walkRight',
+        ]
+        const playState = 'play'
+        const idleState = 'idle'
+
+        let currentState = 'walkState'
+        let currentDanceState = 'danceFront'
+        let walkDirection = "left"
+        let i = 0
+
+        setInterval(function () {
+            let active = document.getElementsByClassName('activated')
+            active[0].classList.toggle("activated")
+            let actived = document.getElementsByClassName('activate')
+            actived[0].classList.toggle("activate")
+
+            switch (currentState) {
+                case "walkState":
+                    document.getElementById('panda-move').classList.add("activate")
+
+                    if (i == 0) {
+                        document.getElementsByClassName('panda-container')[0].classList.replace(
+                            "panda-container",
+                            "panda-container-left"
+                        )
+                        i++
+                    } else if (i == 1) {
+                        document.getElementsByClassName('panda-container-left')[0].classList.replace(
+                            "panda-container-left",
+                            "panda-container"
+                        )
+                        walkDirection = 'right'
+                        i++
+                    } else if (i == 2) {
+                        document.getElementsByClassName('panda-container')[0].classList.replace(
+                            "panda-container",
+                            "panda-container-right"
+                        )
+                        i++
+                    } else {
+                        document.getElementsByClassName('panda-container-right')[0].classList.replace(
+                            "panda-container-right",
+                            "panda-container"
+                        )
+                        walkDirection = 'left'
+                        i = 0
+                    }
+
+                    if (walkDirection == 'left')
+                        document.getElementById('panda-walk-left').classList.add("activated")
+                    else
+                        document.getElementById('panda-walk-right').classList.add("activated")
+                    break;
+                case "danceState":
+                    document.getElementById('panda-stay').classList.add("activate")
+                    document.getElementById('panda-front-dance').classList.add("activated")
+                    break;
+                case "playState":
+                    document.getElementById('panda-stay').classList.add("activate")
+                    document.getElementById('panda-play').classList.add("activated")
+                    break;
+            }
+        }, 1000);
+
+        function changeDance() {
+            setInterval(function () {
+                currentDanceState = danceStates[Math.floor(Math.random() * danceStates.length)]
+                switch (currentDanceState) {
+                    case 'danceFront':
+                        document.getElementById('panda-front-dance').classList.add("activated")
+                        break;
+                    case 'danceBack':
+                        document.getElementById('panda-back-dance').classList.add("activated")
+                        break;
+                    case 'danceShake':
+                        document.getElementById('panda-shake-dance').classList.add("activated")
+                        break;
+                }
+            }, 5000)
+        }
+
+        function changeTheVariableToWalk() {
+            currentState = 'walkState';
+            console.log('walking')
+        }
+
+        function changeTheVariableToPlay() {
+            currentState = 'playState';
+            console.log('play')
+        }
+
+        function changeTheVariableToDance() {
+            currentState = 'danceState';
+            console.log('dance')
+        }
+
+    </script>
+    <script>
+
+        setInterval(function () {
+            document.getElementById('walk-button').click()
+            console.log('click')
+        }, 16000)
+    </script>
 {% endblock %}

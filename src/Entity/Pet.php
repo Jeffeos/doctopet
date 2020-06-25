@@ -41,6 +41,11 @@ class Pet
      * @ORM\Column(type="integer")
      */
     private $health;
+  
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $hasBamboo = 0;
 
     public function getId(): ?int
     {
@@ -108,6 +113,18 @@ class Pet
     public function setHealth(int $health): self
     {
         $this->health = $health;
+      
+        return $this;
+    }
+
+    public function getHasBamboo(): ?int
+    {
+        return $this->hasBamboo;
+    }
+
+    public function setHasBamboo(?int $hasBamboo): self
+    {
+        $this->hasBamboo = $hasBamboo;
 
         return $this;
     }

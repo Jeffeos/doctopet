@@ -110,6 +110,9 @@ class PetController extends AbstractController
     {
         $pet->setHasPills(false);
         $pet->setHealth($pet->getHealth()+20);
+        $pet->setHappiness($pet->getHappiness()+20);
+        $pet->setHasBamboo($pet->getHasBamboo()+5);
+
         $this->getDoctrine()->getManager()->flush();
 
         return $this->redirectToRoute('pet_index', ['id' => 1] );
