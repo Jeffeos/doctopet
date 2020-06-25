@@ -6,6 +6,7 @@ use App\Entity\Medicine;
 use App\Entity\User;
 use App\Form\MedicineType;
 use App\Repository\MedicineRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,8 +20,9 @@ class MedicineController extends AbstractController
     /**
      * @Route("/", name="medicine_index", methods={"GET","POST"})
      */
-    public function index(MedicineRepository $medicineRepository, User $user, Request $request): Response
+    public function index(MedicineRepository $medicineRepository, UserRepository $userRepository, Request $request): Response
     {
+        $user = $userRepository->findOneBy([]);
         $medicine = new Medicine();
         $form = $this->createForm(MedicineType::class, $medicine);
         $form->handleRequest($request);
