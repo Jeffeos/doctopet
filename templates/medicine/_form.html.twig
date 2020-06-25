@@ -3,7 +3,7 @@
         <div class="row bnj-medicine-form-desktop">
             <div class="bnj-panda-background">
                 <img id="panda-img" src="{{ asset('../img/panda_head.png') }}" alt="panda_head" class="bnj-panda-mobile-image">
-                <div id="panda-border" onclick="addPanda('panda-border', 'panda-img')" class="col-sm-12 col-lg-4">{{ form_row(form.name) }}</div>
+                <div id="panda-border" onclick="addFirstPanda()" class="col-sm-12 col-lg-4">{{ form_row(form.name) }}</div>
             </div>
             <div class="row time-of-day">
                 <div class="col bnj-timeofday-desktop">{{ form_row(form.morning) }}</div>
@@ -12,11 +12,11 @@
             </div>
             <div class="bnj-panda-background">
                 <img id="panda-img-bis" src="{{ asset('../img/panda_head.png') }}" alt="panda_head" class="bnj-panda-mobile-image">
-                <div id="quantity" onclick="addPanda('quantity', 'panda-img-bis')" class="col-sm-12 col-lg-3">{{ form_row(form.quantity) }}</div>
+                <div id="quantity" onclick="addSecondPanda()" class="col-sm-12 col-lg-3">{{ form_row(form.quantity) }}</div>
             </div>
             <div class="bnj-panda-background">
                 <img id="panda-img-ter" src="{{ asset('../img/panda_head.png') }}" alt="panda_head" class="bnj-panda-mobile-image">
-                <div id="number-of-days" onclick="addPanda('number-of-days', 'panda-img-ter')" class="col-sm-12 col-lg-3">{{ form_row(form.numberOfDays) }}</div>
+                <div id="number-of-days" onclick="addThirdPanda()" class="col-sm-12 col-lg-3">{{ form_row(form.numberOfDays) }}</div>
             </div>
         </div>
     </div>
