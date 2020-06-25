@@ -5,7 +5,7 @@ $primaryColor: #41AAA8;
 $secondaryColor: #2C003E;
 $tertiaryColor: #51DACF;
 
-$titlefont: 'Montserrat', cursive;
+$titlefont: 'Pangolin', cursive;
 
 body {
     background-color: #E5E5E5;
@@ -36,7 +36,9 @@ a {
 
 .navbar-brand {
     font-family: $titlefont;
+    margin-left: 20px;
 }
+
 .doctopet-navbar {
     background-color: $primaryColor;
     color: $secondaryColor;
@@ -49,9 +51,33 @@ a {
 }
 
 /* MEDICINE INDEX PAGE */
+
+.bnj-medicine-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bnj-card-border {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 16px;
+}
+
+.bnj-medicine-card-body-container {
+    font-family: $titlefont;
+    display: flex;
+    justify-content: center;
+}
+
 .medicine-button {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .time-of-day {
@@ -146,6 +172,9 @@ a {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+.bnj-container-number {
+    border: 1px solid $secondaryColor;
 }
 
 @media all and (min-width: 769px) {
@@ -193,3 +222,201 @@ a {
     to {transform: translate(-200px, 0px)}
 }
 
+//MOBILE VIEW GAME INDEX
+.bloc_page_pet {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+    .health-bar {
+        border: 1px solid black;
+        height: 4vh;
+        margin: 10px;
+    }
+
+    .happiness-bar {
+        border: 1px solid black;
+        height: 4vh;
+        margin: 10px;
+    }
+
+    .container-pet {
+        border: 1px solid black;
+        height: 65vh;
+        margin: 0 10px;
+    }
+
+    .container-pet-name {
+        margin: 0 10px;
+        border: 1px solid black;
+    }
+
+    .container-button-pet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 10px;
+
+        .text-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button-pet {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            height: 55px;
+            width: 55px;
+            border-radius: 50%;
+            background-color: #51DACF;
+
+            &:focus {
+                outline: none;
+            }
+
+            img {
+                height: 3.5vh;
+            }
+
+            .bamboo {
+                height: 6vh;
+            }
+        }
+    }
+}
+
+//DESKTOP VIEW GAME INDEX
+@media all and (min-width: 769px) {
+
+    .bloc_page_pet {
+        margin: 10px;
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+
+        .health-bar {
+            border: 1px solid black;
+            height: 4vh;
+            margin: 10px;
+            width: 85%;
+        }
+
+        .happiness-bar {
+            border: 1px solid black;
+            height: 4vh;
+            margin: 10px;
+            width: 85%;
+        }
+
+        .container-left {
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-pet {
+            border: 1px solid black;
+            height: 65vh;
+            margin: 10px;
+            width: 85%;
+        }
+
+        .container-pet-name {
+            margin: 0 10px;
+            border: 1px solid black;
+        }
+
+        .container-button-pet {
+            display: flex;
+            justify-content: space-around;
+            height: 40%;
+
+            .text-button:nth-child(2) {
+                align-self: flex-end;
+            }
+
+            .text-button:nth-child(4) {
+                align-self: flex-end;
+            }
+
+            .button-pet {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid black;
+                height: 110px;
+                width: 110px;
+                border-radius: 50%;
+                background-color: #51DACF;
+
+                &:focus {
+                    outline: none;
+                }
+
+                img {
+                    height: 6.5vh;
+                }
+
+                .bamboo {
+                    height: 80px;
+                }
+            }
+        }
+
+        .container-pet-rules {
+            border: 1px solid black;
+            height: 350px;
+            margin: 10px;
+        }
+
+        .container-pet-name {
+            border: 1px solid black;
+        }
+
+        .container-bar-pet {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+@media all and (min-width: 992px) {
+
+    .bnj-medicine-card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .bnj-card-border {
+        width: 40%;
+    }
+
+    .bnj-medicine-form-desktop {
+        display: flex;
+    }
+
+    .time-of-day {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bnj-timeofday-desktop {
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bnj-timeofday-desktop:nth-child(2) {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+}
