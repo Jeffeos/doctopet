@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pet index{% endblock %}
+
+{% block body %}
+
+    <div class="bloc_page_pet">
+        <div class="container-bar-pet">
+            <div class="health-bar"></div>
+            <div class="container-pet"></div>
+            <div class="happiness-bar"></div>
+        </div>
+        <div class="container-left">
+            <div class="container-pet-infos"></div>
+            <div class="container-pet-name">
+                    <h3 class="text-center">{{ pet.name }}</h3>
+            </div>
+            <div class="container-pet-rules"></div>
+
+            <div class="container-button-pet">
+                <div class="text-button">
+                    <button class="button-pet"><img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
+                                                    alt="image bamboo"></button>
+                    <span>Eat</span>
+                </div>
+                <div class="text-button">
+                    <button class="button-pet"><img src="{{ asset('images/icone_discussion.png') }}"
+                                                    alt="image bulle">
+                    </button>
+                    <span>Talk</span>
+                </div>
+                <div class="text-button">
+                    <button class="button-pet"><img src="{{ asset('images/icone_panda_danse.png') }}"
+                                                    alt="image panda">
+                    </button>
+                    <span>Dance</span>
+                </div>
+                <div class="text-button">
+                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}" class="button-pet {% if pet.hasPills %}{% endif %}"><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
+                                                    alt="image medoc"></a>
+                    <span>Pills</span>
+                </div>
+                <div class="text-button">
+                    <button class="button-pet"><img src="{{ asset('images/icone_panda_jeu.png') }}" alt="image panda">
+                    </button>
+                    <span>Play</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

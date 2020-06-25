@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Medicine index{% endblock %}
+
+{% block body %}
+    <h1 style="font-family: 'Pangolin', cursive;">Add a new medicine</h1>
+
+    {{ include('medicine/_form.html.twig', {'button_label': 'Update'}) }}
+
+    {% if medicines %}
+        <div class="bnj-medicine-card-container">
+            {% include 'medicine/_medicine_card.html.twig' %}
+        </div>
+    {% endif %}
+
+{% endblock %}

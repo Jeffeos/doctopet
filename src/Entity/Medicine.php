@@ -43,6 +43,16 @@ class Medicine
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $Quantity;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $numberOfDays;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +114,30 @@ class Medicine
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getQuantity(): ?int
+    {
+        return $this->Quantity;
+    }
+
+    public function setQuantity(int $Quantity): self
+    {
+        $this->Quantity = $Quantity;
+
+        return $this;
+    }
+
+    public function getNumberOfDays(): ?int
+    {
+        return $this->numberOfDays;
+    }
+
+    public function setNumberOfDays(int $numberOfDays): self
+    {
+        $this->numberOfDays = $numberOfDays;
 
         return $this;
     }
