@@ -355,17 +355,17 @@ a {
     }
 
     .container-pet {
-      display: flex;
-      flex-direction: column-reverse;
-      overflow: hidden;
-      border: 6px solid black;
-      height: 65vh;
-      margin: 0 10px;
-      background-position-y: bottom;
-      background-size: cover;
-      background-image: url(/img/fondbaboo.png);
-      background-color: burlywood;
-
+        display: flex;
+        flex-direction: column-reverse;
+        overflow: hidden;
+        border: 6px solid black;
+        height: 65vh;
+        margin: 0 10px;
+        background-position-y: bottom;
+        background-size: cover;
+        background-image: url(/img/fondbaboo.png);
+        background-color: burlywood;
+    }
     .inside-progress-health-bar-pet { //display inside progress bar
         background-color: $primaryColor;
         height: 24px;
