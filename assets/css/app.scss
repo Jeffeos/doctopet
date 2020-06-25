@@ -295,18 +295,6 @@ a {
 
 @media all and (min-width: 992px) {
 
-    .bnj-medicine-card-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    .bnj-card-border {
-        width: 40%;
-    }
-
     .bnj-medicine-form-desktop {
         display: flex;
     }
@@ -326,6 +314,18 @@ a {
     .bnj-timeofday-desktop:nth-child(2) {
         display: flex;
         justify-content: flex-start;
+    }
+
+    .bnj-medicine-card-container {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-evenly;
+         align-items: center;
+         flex-wrap: wrap;
+     }
+
+    .bnj-card-border {
+        width: 40%;
     }
 
 }
