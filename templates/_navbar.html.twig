@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg doctopet-navbar navbar-light">
+    <a href="{{ path('medicine_send') }}"><img class="nav-item doctopet-logo" src="{{ asset('../img/doctopet-logo.png') }}"></a>
     <a class="navbar-brand" href="{{ path('app_index') }}" style="font-family: 'Pangolin', cursive;">DOCTOPET</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,13 +9,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto navbar-flex">
             <li {% if route_name == "medicine_index" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                <a class="nav-link" href="{{ path('medicine_index') }}" style="font-family: 'Pangolin', cursive;">{% if route_name == "medicine_index" %}<img
-                        class="nav-item doctopet-logo" src="{{ asset('../img/doctopet-logo.png') }}">{% endif %} My
+                <a class="nav-link" href="{{ path('medicine_index') }}" style="font-family: 'Pangolin', cursive;">My
                     Prescriptions</a>
             </li>
             <li {% if route_name == "pet_index" %} class="nav-item active" {% else %} class="nav-item" {% endif %} >
-                <a class="nav-link" href="{{ path('pet_index') }}" style="font-family: 'Pangolin', cursive;">{% if route_name == "pet_index" %}<img
-                        class="nav-item doctopet-logo" src="{{ asset('../img/doctopet-logo.png') }}">{% endif %} My Pet</a>
+                <a class="nav-link" href="{{ path('pet_index', { 'id': 1 }) }}" style="font-family: 'Pangolin', cursive;">My Pet</a>
             </li>
             {% if app.user %}
                 <li class="nav-item">
