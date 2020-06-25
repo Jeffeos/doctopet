@@ -32,6 +32,11 @@ class Pet
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $hasPills;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +79,18 @@ class Pet
         if ($user->getPet() !== $this) {
             $user->setPet($this);
         }
+
+        return $this;
+    }
+
+    public function getHasPills(): ?bool
+    {
+        return $this->hasPills;
+    }
+
+    public function setHasPills(bool $hasPills): self
+    {
+        $this->hasPills = $hasPills;
 
         return $this;
     }

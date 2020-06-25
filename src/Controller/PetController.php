@@ -16,12 +16,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class PetController extends AbstractController
 {
     /**
-     * @Route("/", name="pet_index", methods={"GET"})
+     * @Route("/{id}", name="pet_index", methods={"GET"})
      */
-    public function index(PetRepository $petRepository): Response
+    public function index(Pet $pet, PetRepository $petRepository): Response
     {
         return $this->render('pet/index.html.twig', [
-            'pets' => $petRepository->findAll(),
+            'pet' => $pet,
         ]);
     }
 
@@ -90,5 +90,28 @@ class PetController extends AbstractController
         }
 
         return $this->redirectToRoute('pet_index');
+    }
+
+    /**
+     * @Route("/{id}/addPill", name="pet_addPills", methods={"GET"})
+     */
+    public function addPill(Pet $pet): Response
+    {
+        $pet->setHasPills(true);
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->redirectToRoute('pet_index', ['id' => 1] );
+    }
+
+    /**
+     * @Route("/{id}/takePill", name="pet_takePills", methods={"GET"})
+     */
+    public function takePill(Pet $pet): Response
+    {
+        $pet->setHasPills(false);
+        $pet->setHappiness($pet->getHappiness()+20);
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->redirectToRoute('pet_index', ['id' => 1] );
     }
 }

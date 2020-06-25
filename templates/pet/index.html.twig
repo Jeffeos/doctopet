@@ -17,9 +17,7 @@
         <div class="container-left">
             <div class="container-pet-infos"></div>
             <div class="container-pet-name">
-                {% for pet in pets %}
                     <h3 class="text-center">{{ pet.name }}</h3>
-                {% endfor %}
             </div>
             <div class="container-pet-rules"></div>
 
@@ -43,9 +41,8 @@
                     <span>Dance</span>
                 </div>
                 <div class="text-button">
-                    <button class="button-pet"><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
-                                                    alt="image medoc">
-                    </button>
+                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}" class="button-pet {% if pet.hasPills %}{% endif %}"><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
+                                                    alt="image medoc"></a>
                     <span>Pills</span>
                 </div>
                 <div class="text-button">
