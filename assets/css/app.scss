@@ -50,6 +50,10 @@ a {
 
 /* MEDICINE INDEX PAGE */
 
+.bnj-panda-walk {
+    display: none;
+}
+
 .bnj-panda-background {
     width: 100%;
     display: flex;
@@ -295,8 +299,22 @@ a {
 
 @media all and (min-width: 992px) {
 
+    .bnj-panda-walk {
+        display: block;
+
+    }
+
     .bnj-medicine-form-desktop {
         display: flex;
+    }
+
+    .bnj-panda-border-mobile {
+        width: 100%;
+        border: 0;
+    }
+
+    .bnj-panda-mobile-image-display {
+        display: none;
     }
 
     .time-of-day {
