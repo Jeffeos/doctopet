@@ -14,7 +14,8 @@ class NotificationManager extends AbstractController
     {
 
         $content = array(
-            "en" => "Don't forget to take care of your friend!"
+            "en" => "Don't forget to take care of your friend!",
+            "chrome_web_image" => "https://drive.google.com/drive/folders/1hYAufaJ7CXLPYBmUkk6-02Zmmp2xGzat",
         );
 
         $fields = array(

@@ -1,0 +1,39 @@
+{% for medicine in medicines %}
+    <div class="card border-info bnj-card-border" style="height: 300px;">
+        <div class="card-body bnj-medicine-card-body-container" style="display: flex; flex-direction: column; justify-content: space-evenly">
+            <div class="card-title" style="display: flex; justify-content: space-evenly; align-items: center">
+                <img src="{{ asset('../img/pillule_bleue.png') }}" width="75" height="75" alt="pillule_bleue">
+                <h2 class="text-center" style="display: flex; align-items: center"><a style="font-family: 'Pangolin', cursive;">{{ medicine.name }}</a></h2>
+                <img src="{{ asset('../img/pillule_rouge.png') }}" width="75" height="75" alt="pillule_rouge">
+            </div>
+
+            <div class="card-medicine-frequence" style="display: flex; justify-content: space-evenly;">
+                <div class="medicine-morning" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
+                    <a style="font-size: 24px">Morning</a>
+                    <input type="checkbox" {{ medicine.morning ? "checked" : null }}>
+                </div>
+                <div class="medicine-noon" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
+                    <a style="font-size: 24px">Noon</a>
+                    <input type="checkbox" {{ medicine.noon ? "checked" : null }}>
+                </div>
+                <div class="medicine-evening" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
+                    <a style="font-size: 24px">Evening</a>
+                    <input type="checkbox" {{ medicine.evening ? "checked" : null }}>
+                </div>
+            </div>
+
+            <div class="card-medicine-info" style="display: flex; justify-content: space-evenly">
+                <div class="medicine-quantity" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
+                    <a style="text-align: center; font-size: 24px">Quantity</a>
+                    <div style="height: 50px; width: 50px; border-radius: 5px; display: flex; justify-content: center; align-items: center; font-size: 1.5em; font-weight: bold" class="bnj-container-number">{{ medicine.Quantity }}</div>
+                </div>
+                <div class="medicine-numberofdays" style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center">
+                    <a style="text-align: center; font-size: 24px">Duration</a>
+                    <div style="height: 50px; width: 50px; border-radius: 5px; display: flex; justify-content: center; align-items: center; font-size: 1.5em; font-weight: bold" class="bnj-container-number">{{ medicine.numberOfDays }}</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endfor %}
+
