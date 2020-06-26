@@ -87,7 +87,11 @@
         <div class="container-left">
             <div class="container-pet-infos"></div>
             <div class="container-pet-name container-pet-name-desk">
-                <h3 class="text-center">{{ pet.name }}</h3>
+                <div class="container-background-bamboo">
+                    <img class="img-bamboo" src="{{ asset('images/icone_nourriture.png') }}" alt="bamboo">
+                    <h3 class="text-center">{{ pet.name }}</h3>
+                    <img class=" img-bamboo" src="{{ asset('images/icone_nourriture.png') }}" alt="bamboo">
+                </div>
             </div>
             <div class="container-pet-rules container-pet-rules-desk">
                 <h5 id="line1">Hello there !</h5>
@@ -105,7 +109,7 @@
             <div class="container-button-pet">
                 <div class="text-button bamboo-btn">
                     <a href="{% if pet.hasBamboo > 0 %} {{ path('pet_feed', {'id': 1}) }} {% endif %}" onclick="eat()" class="button-pet" id="button-pet-eat" {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} >
-                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}" "
+                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
                                                     alt="image bamboo"></a>
                     <div class="eat">
                         <span>Eat (</span><span class="bamboo-nb">{{ pet.hasBamboo }}</span><span>)</span>
