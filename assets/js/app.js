@@ -77,3 +77,40 @@ $(document).ready(function () {
         });
     });
 });
+
+$(document).ready(function () {
+    $('.button-pill').on('click', function (f) {
+        f.preventDefault();
+
+        var $link = $(f.currentTarget);
+        $.ajax({
+            method: 'POST',
+            url: "/pet/1/takePill"
+        }).done(function (data) {
+            $('.pills-nb').html(data.pills);
+console.log(data.pills)
+            // Check if value = 0, if so, class with background grey
+            if (data.pills === 0) {
+                $('#button-pill-link').addClass('background-grey');
+            }
+console.log(data.health);
+            if (data.health >= 10) {
+                $('#health-gauge').addClass('health20');
+            }
+
+            if (data.health >= 30) {
+                $('#health-gauge').addClass('health40');
+            }
+            if (data.health >= 50) {
+                $('#health-gauge').addClass('health60');
+            }
+            if (data.health >= 80) {
+                $('#health-gauge').addClass('health80');
+            }
+            if (data.health >= 100) {
+                $('#health-gauge').addClass('health100');
+            }
+
+        })
+    });
+});

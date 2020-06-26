@@ -46,8 +46,10 @@ a {
 
 /* NAVBAR */
 .doctopet-logo {
-    height: 40px;
-    width: 40px;
+  height: 40px;
+  border: solid black 2px;
+  width: 40px;
+  border-radius: 20px;
 }
 
 .introduction {
@@ -267,6 +269,19 @@ a {
     border: 1px solid $secondaryColor;
 }
 
+.chating {
+  color: white;
+  border-bottom: solid $primaryColor
+}
+
+.container-pet-name-desk {
+  display: none;
+}
+.container-pet-name-mobile {
+  display: block;
+  padding-top: 20px;
+}
+
 /* KEYFRAMES ANIMATIONS */
 @keyframes panda-front-dance-anim {
     0% {
@@ -380,18 +395,20 @@ a {
     }
 
     .container-pet {
-        display: flex;
-        flex-direction: column-reverse;
-        overflow: hidden;
-        border: 6px solid black;
-        height: 65vh;
-        margin: 0 10px;
-        background-position-y: bottom;
-        background-size: cover;
-        background-image: url(/img/fondbaboo.png);
-        background-color: burlywood;
+      display: flex;
+      flex-direction: column-reverse;
+      overflow: hidden;
+      border: 6px solid black;
+      height: 65vh;
+      min-width: 280px;
+      margin: 0 10px;
+      background-position-y: bottom;
+      background-size: cover;
+      background-image: url(/img/fondbaboo.png);
+      background-color: burlywood;
     }
-    .inside-progress-health-bar-pet { //display inside progress bar
+
+  .inside-progress-health-bar-pet { //display inside progress bar
         background-color: $primaryColor;
         height: 24px;
         border-radius: 15px;
@@ -433,9 +450,24 @@ a {
     }
 
     .container-pet-name {
-        margin: 0 10px;
-        border: 1px solid black;
+        margin: 10px 10px;
     }
+
+  .container-pet-name-desk {
+    display: none;
+  }
+  .container-pet-name-mobile {
+    display: block;
+    padding-top: 20px;
+  }
+
+  .container-pet-rules-desk {
+    display: none;
+  }
+  .container-pet-rules-mobile {
+    display: block;
+    max-height: 300px;
+  }
 
     .container-button-pet {
         display: flex;
@@ -565,9 +597,15 @@ a {
         }
 
         .container-pet-name {
-            margin: 0 10px;
-            border: 1px solid black;
+            margin: 10px 10px;
         }
+
+      .container-pet-rules-desk {
+        display: block;
+      }
+      .container-pet-rules-mobile {
+        display: none;
+      }
 
         .text-button {
             span {
@@ -640,13 +678,13 @@ a {
         }
 
         .container-pet-rules {
-            border: 1px solid black;
-            height: 350px;
-            margin: 10px;
-        }
-
-        .container-pet-name {
-            border: 1px solid black;
+          border: 1px solid black;
+          background-color: white;
+          border-radius: 10px;
+          box-shadow: grey 0px 0px 11px;
+          height: 390px;
+          margin: 10px;
+          padding: 30px;
         }
 
         .container-bar-pet {
@@ -701,6 +739,7 @@ a {
 
 .background-grey {
   background-color: #A9A9A9 !important;
+  z-index: -1;
 }
 
 .happiness10 {
@@ -735,4 +774,23 @@ a {
 }
 .happiness100 {
     width: 100% !important;
+}
+
+.health20 {
+  width: 20% !important;
+}
+
+.health40 {
+  width: 40% !important;
+}
+
+.health60 {
+  width: 60% !important;
+}
+
+.health80 {
+  width: 80% !important;
+}
+.health100 {
+  width: 100% !important;
 }

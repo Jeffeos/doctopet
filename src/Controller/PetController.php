@@ -105,7 +105,7 @@ class PetController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/takePill", name="pet_takePills", methods={"GET"})
+     * @Route("/{id}/takePill", name="pet_takePills", methods={"GET", "POST"})
      */
     public function takePill(Pet $pet): Response
     {
@@ -115,7 +115,11 @@ class PetController extends AbstractController
 
         $this->getDoctrine()->getManager()->flush();
 
-        return $this->redirectToRoute('pet_index', ['id' => 1] );
+        return new JsonResponse([
+            'pills' => 0,
+            'health' => $pet->getHealth(),
+        ]);
+        // return $this->redirectToRoute('pet_index', ['id' => 1] );
     }
 
     /**

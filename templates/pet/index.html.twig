@@ -25,10 +25,13 @@
         {% elseif pet.happiness <= 100 %}100%
         {% endif %}
     {% endset %}
+    <div class="container-pet-name container-pet-name-mobile">
+        <h3 class="text-center">{{ pet.name }}</h3>
+    </div>
     <div class="bloc_page_pet">
         <div class="container-bar-pet">
             <div class="progress-health-bar">
-                <div class=" progress-bar progress-bar-striped inside-progress-health-bar-pet" style="width:{{ progressHealth }}"></div>
+                <div class=" progress-bar progress-bar-striped inside-progress-health-bar-pet" id="health-gauge" style="width:{{ progressHealth }}"></div>
             </div>
             <div class="text-progress">
                 <span>Health</span>
@@ -83,46 +86,71 @@
         </div>
         <div class="container-left">
             <div class="container-pet-infos"></div>
-            <div class="container-pet-name">
+            <div class="container-pet-name container-pet-name-desk">
                 <h3 class="text-center">{{ pet.name }}</h3>
             </div>
-            <div class="container-pet-rules"></div>
+            <div class="container-pet-rules container-pet-rules-desk">
+                <h5 id="line1">Hello there !</h5>
+                <h5 id="line2"></h5>
+                <h5 id="line3"></h5>
+                <h5 id="line4"></h5>
+                <h5 id="line5"></h5>
+                <h5 id="line6"></h5>
+                <h5 id="line7"></h5>
+                <div class="chating">
+                    <h5 id="line8"></h5>
+                </div>
+            </div>
 
             <div class="container-button-pet">
                 <div class="text-button bamboo-btn">
-                    <a href="{% if pet.hasBamboo > 0 %} {{ path('pet_feed', {'id': 1}) }} {% endif %}" class="button-pet" id="button-pet-eat" {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} >
+                    <a href="{% if pet.hasBamboo > 0 %} {{ path('pet_feed', {'id': 1}) }} {% endif %}" onclick="eat()" class="button-pet" id="button-pet-eat" {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} >
                         <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}" "
                                                     alt="image bamboo"></a>
                     <div class="eat">
                         <span>Eat (</span><span class="bamboo-nb">{{ pet.hasBamboo }}</span><span>)</span>
                     </div>
+
                 </div>
                 <div class="text-button">
-                    <button id="btn-bubble" onclick="toggleTalking()"
+                    <button id="btn-bubble" onclick="toggleTalking(), talk()"
                             class="button-pet"><img src="{{ asset('images/icone_discussion.png') }}"
                                                     alt="image bulle">
                     </button>
                     <span>Talk</span>
                 </div>
                 <div class="text-button">
-                    <button class="button-pet" onclick="changeTheVariableToDance()" id="dance-button"><img
+                    <button class="button-pet" onclick="changeTheVariableToDance(), dance()" id="dance-button"><img
                                 src="{{ asset('images/icone_panda_danse.png') }}"
                                 alt="image panda">
                     </button>
                     <span>Dance</span>
                 </div>
-                <div class="text-button">
+                <div class="text-button button-pill">
                     <div class="rotate-pills"><a href="{% if pet.hasPills > 0 %} {{ path('pet_takePills', { 'id': 1 }) }} {% endif %}"
-                    class="button-pet" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %}>
+                    class="button-pet" id="button-pill-link" onclick="medicate()" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %}>
                         <img class="pills" src="{{ asset('img/pillule_rouge.png') }}" alt="image medoc"></a></div>
-
-                    <span>Pills</span>
+                    <div class="pills">
+                        <span>Pills (</span><span class="pills-nb">{{ pet.hasPills }}</span><span>)</span>
+                    </div>
                 </div>
                 <div class="text-button">
-                    <button class="button-pet" onclick="changeTheVariableToPlay()" id="play-button"><img
+                    <button class="button-pet" onclick="changeTheVariableToPlay(), play()" id="play-button"><img
                                 src="{{ asset('images/icone_panda_jeu.png') }}" alt="image panda">
                     </button>
                     <span>Play</span>
+                </div>
+            </div>
+            <div class="container-pet-rules container-pet-rules-mobile">
+                <h5 id="line1">Hello there !</h5>
+                <h5 id="line2"></h5>
+                <h5 id="line3"></h5>
+                <h5 id="line4"></h5>
+                <h5 id="line5"></h5>
+                <h5 id="line6"></h5>
+                <h5 id="line7"></h5>
+                <div class="chating">
+                    <h5 id="line8"></h5>
                 </div>
             </div>
         </div>
@@ -261,10 +289,126 @@
 
     </script>
     <script>
-
         setInterval(function () {
             document.getElementById('walk-button').click()
             console.log('click')
         }, 16000)
+    </script>
+    <script>
+        const sentence = [
+            'Your pet feels good',
+            'Your pet is hungry',
+            'Your pet wants to dance',
+            'Your pet wants to play',
+            'Your pet is happy',
+            'Your pet loves cheddar',
+            'Your pet is not a yeti',
+            'Your pet wants a cookie',
+            'Your pet is healthy',
+            'Your pet wants to surf',
+            'Your pet wants to ski',
+            'Your pet loves you',
+            'Take care of your panda',
+            'Your pet\'s favourite number is 42',
+            'Your pet knows kung-fu',
+            'Your pet eats vegetables',
+            'Your pet loves DoctoLib et Dataiku',
+            'Your pet don\'t know what is PHP',
+            'Your pet can\'t use a computer',
+
+        ]
+        const yourSentence = [
+            '<strong>You gave bamboo to your pet</strong>',
+            '<strong>You gave medic to your pet</strong>',
+            '<strong>Your pet is dancing</strong>',
+            '<strong>Your pet is playing</strong>',
+            '<strong>Your pet is talking</strong>',
+            '<strong>Your pet is hanging around</strong>',
+        ]
+
+        let idx = 2
+
+        setInterval(function () {
+
+            if (idx < 8) {
+                document.getElementById('line' + idx).innerHTML = sentence[Math.floor(Math.random() * sentence.length)];
+                idx++
+            } else if (idx > 7) {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line' + idx).innerHTML = sentence[Math.floor(Math.random() * sentence.length)]
+                }
+            }
+        }, 15000)
+
+        function dance() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[2]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[2]
+                }
+            }
+
+        }
+        function move() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[5]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[5]
+                }
+            }
+        }
+        function play() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[3]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[3]
+                }
+            }
+        }
+        function eat() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[0]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[0]
+                }
+            }
+        }
+        function medicate() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[1]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[1]
+                }
+
+            }
+        }
+        function talk() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[4]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[4]
+                }
+            }
+        }
+
     </script>
 {% endblock %}
