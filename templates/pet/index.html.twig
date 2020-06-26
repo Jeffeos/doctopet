@@ -93,7 +93,7 @@
                     <a href="{% if pet.hasBamboo > 0 %} {{ path('pet_feed', {'id': 1}) }} {% endif %}" class="button-pet" id="button-pet-eat" {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} >
                         <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}" "
                                                     alt="image bamboo"></a>
-                    <div>
+                    <div class="eat">
                         <span>Eat (</span><span class="bamboo-nb">{{ pet.hasBamboo }}</span><span>)</span>
                     </div>
                 </div>
@@ -112,9 +112,9 @@
                     <span>Dance</span>
                 </div>
                 <div class="text-button">
-                    <a href="{% if pet.hasPills > 0 %} {{ path('pet_takePills', { 'id': 1 }) }} {% endif %}" 
+                    <div class="rotate-pills"><a href="{% if pet.hasPills > 0 %} {{ path('pet_takePills', { 'id': 1 }) }} {% endif %}"
                     class="button-pet" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %}>
-                        <img class="pills" src="{{ asset('img/pillule_rouge.png') }}" alt="image medoc"></a>
+                        <img class="pills" src="{{ asset('img/pillule_rouge.png') }}" alt="image medoc"></a></div>
 
                     <span>Pills</span>
                 </div>
