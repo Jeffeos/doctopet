@@ -111,7 +111,6 @@ class PetController extends AbstractController
     {
         $pet->setHasPills(false);
         $pet->setHealth($pet->getHealth()+20);
-        $pet->setHappiness($pet->getHappiness()+20);
         $pet->setHasBamboo($pet->getHasBamboo()+5);
 
         $this->getDoctrine()->getManager()->flush();
@@ -125,12 +124,14 @@ class PetController extends AbstractController
     public function feed(Pet $pet, Request $request): Response
     {
         $pet->setHasBamboo($pet->getHasBamboo()-1);
-        $pet->setHappiness($pet->getHappiness()+5);
+        if ($pet->getHappiness() < 90) {
+            $pet->setHappiness($pet->getHappiness() + 10);
+        }
         $this->getDoctrine()->getManager()->flush();
 
         return new JsonResponse([
             'bamboo' => $pet->getHasBamboo(),
-            'Happiness' => $pet->getHappiness(),
+            'happiness' => (int) $pet->getHappiness(),
         ]);
 
     }
