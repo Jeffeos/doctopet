@@ -3,7 +3,11 @@
 {% block title %}Medicine index{% endblock %}
 
 {% block body %}
+    <div class="container-background-bamboo">
+        <img class="img-bamboo" src="{{ asset('images/icone_nourriture.png') }}" alt="bamboo">
     <h1 style="font-family: 'Pangolin', cursive;">Add a new medicine</h1>
+        <img class=" img-bamboo" src="{{ asset('images/icone_nourriture.png') }}" alt="bamboo">
+    </div>
 
     {{ include('medicine/_form.html.twig', {'button_label': 'Update'}) }}
 

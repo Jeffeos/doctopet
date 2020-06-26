@@ -46,6 +46,11 @@ a {
     margin-right: auto;
 }
 
+.background-bamboo {
+    position: absolute;
+    height: 200px;
+}
+
 .navbar-brand {
     font-family: $titlefont;
     margin-left: 20px;
@@ -58,10 +63,10 @@ a {
 
 /* NAVBAR */
 .doctopet-logo {
-  height: 40px;
-  border: solid black 2px;
-  width: 40px;
-  border-radius: 20px;
+    height: 40px;
+    border: solid black 2px;
+    width: 40px;
+    border-radius: 20px;
 }
 
 .introduction {
@@ -130,6 +135,7 @@ a {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+  
   button {
     box-shadow: grey 0px 0px 11px;
   }
@@ -151,36 +157,43 @@ a {
   }
 }
 
+.container-background-bamboo {
+
+    img {
+       display: none;
+    }
+}
+
 /* PANDA SECTION */
 .pand-container {
-  height: 200px;
-  width: 200px;
-  overflow: hidden;
-  margin: 15px 0px -5px 0px;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    margin: 15px 0px -5px 0px;
 }
 
 .panda-container {
-  height: 200px;
-  width: 200px;
-  overflow: hidden;
-  margin: 15px 0px -5px 0px;
-  transition: margin 4s linear;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    margin: 15px 0px -5px 0px;
+    transition: margin 4s linear;
 }
 
 .panda-container-left {
-  height: 200px;
-  width: 200px;
-  overflow: hidden;
-  margin: 15px 300px -5px 0px;
-  transition: margin 4s linear;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    margin: 15px 300px -5px 0px;
+    transition: margin 4s linear;
 }
 
 .panda-container-right {
-  height: 200px;
-  width: 200px;
-  overflow: hidden;
-  margin: 15px 0px -5px 300px;
-  transition: margin 4s linear;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    margin: 15px 0px -5px 300px;
+    transition: margin 4s linear;
 }
 
 .panda {
@@ -233,14 +246,14 @@ a {
 }
 
 .activated, .activate, .active-talk {
-  display: block;
+    display: block;
 }
 
 .panda-window-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-bottom: solid darkgreen 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: solid darkgreen 15px;
 }
 
 #walk-button {
@@ -253,28 +266,29 @@ a {
 }
 
 .bulles-left {
-  height: 150px;
+    height: 150px;
 }
 
 .bulles-right {
-  height: 150px;
-  transform: rotateY(180deg);
+    height: 150px;
+    transform: rotateY(180deg);
 }
 
 .bulle-anim {
-  animation: pandaTalk 2s steps(5) infinite;
+    animation: pandaTalk 2s steps(5) infinite;
 }
+
 .bulle-anim2 {
-  animation: pandaTalk2 0.5s steps(2) infinite;
+    animation: pandaTalk2 0.5s steps(2) infinite;
 }
 
 .panda-talking {
-  height: 150px;
-  width: 150px;
-  overflow: hidden;
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
 }
 
-  .bnj-container-number {
+.bnj-container-number {
     height: 150px;
     width: 150px;
 }
@@ -290,16 +304,17 @@ a {
 }
 
 .chating {
-  color: white;
-  border-bottom: solid $primaryColor
+    color: white;
+    border-bottom: solid $primaryColor
 }
 
 .container-pet-name-desk {
-  display: none;
+    display: none;
 }
+
 .container-pet-name-mobile {
-  display: block;
-  padding-top: 20px;
+    display: block;
+    padding-top: 20px;
 }
 
 /* KEYFRAMES ANIMATIONS */
@@ -364,30 +379,33 @@ a {
     100% {
         margin-left: 200px
     }
-  }
-  @keyframes pandaTalk {
+}
+
+@keyframes pandaTalk {
     from {
-      margin-left: 0px
+        margin-left: 0px
     }
     to {
-      margin-left: -750px
+        margin-left: -750px
     }
-  }
-@keyframes pandaTalk2 {
-  from {
-    margin-left: 0px
-  }
-  to {
-    margin-left: -300px
-  }
 }
+
+@keyframes pandaTalk2 {
+    from {
+        margin-left: 0px
+    }
+    to {
+        margin-left: -300px
+    }
+}
+
 @keyframes pandaMoveLeft {
-  from {
-    transform: translate(0px, 0px)
-  }
-  to {
-    transform: translate(-200px, 0px)
-  }
+    from {
+        transform: translate(0px, 0px)
+    }
+    to {
+        transform: translate(-200px, 0px)
+    }
 }
 
 //MOBILE VIEW GAME INDEX
@@ -421,20 +439,20 @@ a {
     }
 
     .container-pet {
-      display: flex;
-      flex-direction: column-reverse;
-      overflow: hidden;
-      border: 6px solid black;
-      height: 65vh;
-      min-width: 280px;
-      margin: 0 10px;
-      background-position-y: bottom;
-      background-size: cover;
-      background-image: url(/img/fondbaboo.png);
-      background-color: burlywood;
+        display: flex;
+        flex-direction: column-reverse;
+        overflow: hidden;
+        border: 6px solid black;
+        height: 65vh;
+        min-width: 280px;
+        margin: 0 10px;
+        background-position-y: bottom;
+        background-size: cover;
+        background-image: url(/img/fondbaboo.png);
+        background-color: burlywood;
     }
 
-  .inside-progress-health-bar-pet { //display inside progress bar
+    .inside-progress-health-bar-pet { //display inside progress bar
         background-color: $primaryColor;
         height: 24px;
         border-radius: 15px;
@@ -479,13 +497,23 @@ a {
         margin: 10px 10px;
     }
 
-  .container-pet-rules-desk {
-    display: none;
-  }
-  .container-pet-rules-mobile {
-    display: block;
-    max-height: 300px;
-  }
+    .container-pet-name-desk {
+        display: none;
+    }
+
+    .container-pet-name-mobile {
+        display: block;
+        padding-top: 20px;
+    }
+
+    .container-pet-rules-desk {
+        display: none;
+    }
+
+    .container-pet-rules-mobile {
+        display: block;
+        max-height: 300px;
+    }
 
     .container-button-pet {
         display: flex;
@@ -568,13 +596,13 @@ a {
             display: flex;
             flex-direction: column;
         }
-      
-      .container-pet {
-        border: 6px solid black;
-        height: 65vh;
-        margin: 10px;
-        width: 85%;
-      }
+
+        .container-pet {
+            border: 6px solid black;
+            height: 65vh;
+            margin: 10px;
+            width: 85%;
+        }
 
         .progress-health-bar { //display background progress bar
             width: 85%;
@@ -630,12 +658,13 @@ a {
             margin: 10px 10px;
         }
 
-      .container-pet-rules-desk {
-        display: block;
-      }
-      .container-pet-rules-mobile {
-        display: none;
-      }
+        .container-pet-rules-desk {
+            display: block;
+        }
+
+        .container-pet-rules-mobile {
+            display: none;
+        }
 
         .text-button {
             span {
@@ -699,8 +728,9 @@ a {
         .rotate-pills {
             img {
                 -webkit-transition: -webkit-transform .8s ease-in-out;
-                transition:         transform .8s ease-in-out;
+                transition: transform .8s ease-in-out;
             }
+
             img:hover {
                 -webkit-transform: rotate(360deg);
                 transform: rotate(360deg);
@@ -708,13 +738,13 @@ a {
         }
 
         .container-pet-rules {
-          border: 1px solid black;
-          background-color: white;
-          border-radius: 10px;
-          box-shadow: grey 0px 0px 11px;
-          height: 390px;
-          margin: 10px;
-          padding: 30px;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: grey 0px 0px 11px;
+            height: 390px;
+            margin: 10px;
+            padding: 30px;
         }
 
         .container-bar-pet {
@@ -728,8 +758,8 @@ a {
 @media all and (min-width: 992px) {
 
     .bnj-medicine-main-container {
-      margin-top: 50px;
-      margin-bottom: 50px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
 
     .bnj-medicine-card-container {
@@ -766,11 +796,22 @@ a {
         justify-content: flex-start;
     }
 
-  }
+    .container-background-bamboo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 150px;
+            display: block;
+        }
+    }
+
+}
 
 .background-grey {
-  background-color: #A9A9A9 !important;
-  z-index: -1;
+    background-color: #A9A9A9 !important;
+    z-index: -1;
 }
 
 .happiness10 {
@@ -788,40 +829,47 @@ a {
 .happiness40 {
     width: 40% !important;
 }
+
 .happiness50 {
     width: 50% !important;
 }
+
 .happiness60 {
     width: 60% !important;
 }
+
 .happiness70 {
     width: 70% !important;
 }
+
 .happiness80 {
     width: 80% !important;
 }
+
 .happiness90 {
     width: 90% !important;
 }
+
 .happiness100 {
     width: 100% !important;
 }
 
 .health20 {
-  width: 20% !important;
+    width: 20% !important;
 }
 
 .health40 {
-  width: 40% !important;
+    width: 40% !important;
 }
 
 .health60 {
-  width: 60% !important;
+    width: 60% !important;
 }
 
 .health80 {
-  width: 80% !important;
+    width: 80% !important;
 }
+
 .health100 {
-  width: 100% !important;
+    width: 100% !important;
 }
