@@ -709,6 +709,7 @@ a {
 
 .background-grey {
   background-color: #A9A9A9 !important;
+  z-index: -1;
 }
 
 .happiness10 {
@@ -743,4 +744,23 @@ a {
 }
 .happiness100 {
     width: 100% !important;
+}
+
+.health20 {
+  width: 20% !important;
+}
+
+.health40 {
+  width: 40% !important;
+}
+
+.health60 {
+  width: 60% !important;
+}
+
+.health80 {
+  width: 80% !important;
+}
+.health100 {
+  width: 100% !important;
 }
