@@ -32,6 +32,7 @@ a {
 .panda-home {
   height: 100px;
   width: 100px;
+  display: block;
 }
 
 .btn {
@@ -109,12 +110,14 @@ a {
 }
 
 .bnj-card-border {
+  box-shadow: grey 0px 0px 11px;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
     border-radius: 16px;
+
 }
 
 .bnj-medicine-card-body-container {
@@ -388,6 +391,11 @@ a {
 }
 
 //MOBILE VIEW GAME INDEX
+.panda-home {
+  height: 100px;
+  width: 100px;
+  display: none;
+}
 
 .bloc_page_pet {
     margin: 10px;
@@ -522,6 +530,11 @@ a {
 
 //DESKTOP VIEW GAME INDEX
 @media all and (min-width: 769px) {
+  .panda-home {
+    height: 100px;
+    width: 100px;
+    display: block;
+  }
   .container-pet-name-desk {
     display: block;
     padding-top: 20px;
