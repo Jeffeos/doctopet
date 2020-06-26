@@ -63,10 +63,6 @@ a {
 
 /* MEDICINE INDEX PAGE */
 
-.bnj-panda-walk {
-    display: none;
-}
-
 .bnj-panda-background {
     width: 100%;
     display: flex;
@@ -117,7 +113,7 @@ a {
 .medicine-button {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .time-of-day {
@@ -625,8 +621,9 @@ a {
 
   @media all and (min-width: 992px) {
 
-    .bnj-panda-walk {
-      display: block;
+    .bnj-medicine-main-container {
+      margin-top: 50px;
+      margin-bottom: 50px;
     }
 
     .bnj-medicine-card-container {
@@ -643,15 +640,6 @@ a {
 
     .bnj-medicine-form-desktop {
       display: flex;
-    }
-
-    .bnj-panda-border-mobile {
-        width: 100%;
-        border: 0;
-    }
-
-    .bnj-panda-mobile-image-display {
-        display: none;
     }
 
     .time-of-day {
