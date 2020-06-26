@@ -22,7 +22,58 @@ require('bootstrap');
 // require('bootstrap/js/dist/tooltip');
 // require('bootstrap/js/dist/popover');
 
-$(document).ready(function() {
+$(document).ready(function () {
     $('[data-toggle="popover"]').popover();
 });
 
+$(document).ready(function () {
+    $('.bamboo-btn').on('click', function (e) {
+        e.preventDefault();
+
+        var $link = $(e.currentTarget);
+        $.ajax({
+            method: 'POST',
+            url: "/pet/1/feed"
+        }).done(function (data) {
+            $('.bamboo-nb').html(data.bamboo);
+
+            // Check if value = 0, if so, class with background grey
+            if (data.bamboo === 0) {
+                $('#button-pet-eat').addClass('background-grey');
+            }
+            if (data.happiness >= 10) {
+                $('#happy-gauge').addClass('happiness10');
+            }
+
+            if (data.happiness >= 20) {
+                $('#happy-gauge').addClass('happiness20');
+            }
+            if (data.happiness >= 30) {
+                $('#happy-gauge').addClass('happiness30');
+            }
+            if (data.happiness >= 40) {
+                $('#happy-gauge').addClass('happiness40');
+            }
+            if (data.happiness >= 50) {
+                $('#happy-gauge').addClass('happiness50');
+            }
+            if (data.happiness >= 60) {
+                $('#happy-gauge').addClass('happiness60');
+            }
+            if (data.happiness >= 70) {
+                $('#happy-gauge').addClass('happiness70');
+            }
+            if (data.happiness >= 80) {
+                $('#happy-gauge').addClass('happiness80');
+            }
+            if (data.happiness >= 90) {
+                $('#happy-gauge').addClass('happiness90');
+            }
+            if (data.happiness >= 100) {
+                $('#happy-gauge').addClass('happiness100');
+            }
+
+
+        });
+    });
+});
