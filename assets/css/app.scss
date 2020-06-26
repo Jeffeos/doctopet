@@ -23,6 +23,18 @@ a {
     font-family: $titlefont;
 }
 
+.home-tittle {
+  display: flex;
+  justify-content: center;
+  margin-top: 65px;
+}
+
+.panda-home {
+  height: 100px;
+  width: 100px;
+  display: block;
+}
+
 .btn {
     background-color: $tertiaryColor;
     color: $secondaryColor;
@@ -98,12 +110,14 @@ a {
 }
 
 .bnj-card-border {
+  box-shadow: grey 0px 0px 11px;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
     border-radius: 16px;
+
 }
 
 .bnj-medicine-card-body-container {
@@ -116,6 +130,9 @@ a {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
+  button {
+    box-shadow: grey 0px 0px 11px;
+  }
 }
 
 .time-of-day {
@@ -129,6 +146,9 @@ a {
     display: flex;
     flex-direction: column;
     text-align: center;
+  input {
+    box-shadow: grey 0px 0px 11px;
+  }
 }
 
 /* PANDA SECTION */
@@ -371,6 +391,12 @@ a {
 }
 
 //MOBILE VIEW GAME INDEX
+.panda-home {
+  height: 100px;
+  width: 100px;
+  display: none;
+}
+
 .bloc_page_pet {
     margin: 10px;
     display: flex;
@@ -453,14 +479,6 @@ a {
         margin: 10px 10px;
     }
 
-  .container-pet-name-desk {
-    display: none;
-  }
-  .container-pet-name-mobile {
-    display: block;
-    padding-top: 20px;
-  }
-
   .container-pet-rules-desk {
     display: none;
   }
@@ -489,7 +507,7 @@ a {
             height: 55px;
             width: 55px;
             border-radius: 50%;
-            background-color: $tertiaryColor;
+            background-color: $primaryColor;
 
             &:focus {
                 outline: none;
@@ -512,6 +530,18 @@ a {
 
 //DESKTOP VIEW GAME INDEX
 @media all and (min-width: 769px) {
+  .panda-home {
+    height: 100px;
+    width: 100px;
+    display: block;
+  }
+  .container-pet-name-desk {
+    display: block;
+    padding-top: 20px;
+  }
+  .container-pet-name-mobile {
+    display: none;
+  }
 
     .bloc_page_pet {
         margin: 10px;
@@ -645,7 +675,7 @@ a {
                 height: 110px;
                 width: 110px;
                 border-radius: 50%;
-                background-color: #51DACF;
+                background-color: $primaryColor;
 
                 &:focus {
                     outline: none;
@@ -712,6 +742,7 @@ a {
 
     .bnj-card-border {
         width: 40%;
+      box-shadow: grey 0px 0px 11px;
     }
 
     .bnj-medicine-form-desktop {
