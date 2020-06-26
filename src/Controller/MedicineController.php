@@ -6,6 +6,7 @@ use App\Entity\Medicine;
 use App\Entity\User;
 use App\Form\MedicineType;
 use App\Repository\MedicineRepository;
+use App\Repository\PetRepository;
 use App\Repository\UserRepository;
 use App\service\NotificationManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -72,9 +73,13 @@ class MedicineController extends AbstractController
      * @param NotificationManager $notificationManager
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function send(MedicineRepository $medicineRepository, NotificationManager $notificationManager)
+    public function send(MedicineRepository $medicineRepository, NotificationManager $notificationManager, PetRepository $petRepository)
     {
         $medicineRepository->findOneBy([]);
+
+        $pet = $petRepository->findOneBy([]);
+        // $pet->setHealth($pet->getHealth()-10);
+        $this->getDoctrine()->getManager()->flush();
 
         $response = $notificationManager->sendMessage();
         $return["allresponses"] = $response;
