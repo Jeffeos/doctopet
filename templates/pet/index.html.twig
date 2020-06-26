@@ -57,11 +57,13 @@
             <div class="container-pet-rules"></div>
 
             <div class="container-button-pet">
-                <div class="text-button">
-                    <button class="button-pet">
-                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}" {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} "
-                                                    alt="image bamboo"></button>
-                    <span>Eat ({{ pet.hasBamboo }})</span>
+                <div class="text-button bamboo-btn">
+                    <a href="{% if pet.hasBamboo > 0 %} {{ path('pet_feed', {'id': 1}) }} {% endif %}" class="button-pet" id="button-pet-eat" {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} >
+                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}" "
+                                                    alt="image bamboo"></a>
+                    <div>
+                        <span>Eat (</span><span class="bamboo-nb">{{ pet.hasBamboo }}</span><span>)</span>
+                    </div>
                 </div>
                 <div class="text-button">
                     <button class="button-pet"><img src="{{ asset('images/icone_discussion.png') }}"
@@ -76,7 +78,7 @@
                     <span>Dance</span>
                 </div>
                 <div class="text-button">
-                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}" class="button-pet" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %} ><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
+                    <a href="{% if pet.hasPills > 0 %} {{ path('pet_takePills', { 'id': 1 }) }} {% endif %}" class="button-pet" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %} ><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
                                                     alt="image medoc"></a>
                     <span>Pills</span>
                 </div>

@@ -26,3 +26,21 @@ $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
 });
 
+$(document).ready(function() {
+    $('.bamboo-btn').on('click', function(e) {
+        e.preventDefault();
+
+        var $link = $(e.currentTarget);
+        $.ajax({
+            method: 'POST',
+            url: "/pet/1/feed"
+        }).done(function(data) {
+            $('.bamboo-nb').html(data.bamboo);
+            console.log(data.bamboo);
+            // Check if value = 0, if so, class with background grey
+            if (data.bamboo === 0) {
+                $('#button-pet-eat').addClass('background-grey');
+            }
+        })
+    });
+});
