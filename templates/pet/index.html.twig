@@ -130,10 +130,6 @@
                     <div class="rotate-pills"><a href="{% if pet.hasPills > 0 %} {{ path('pet_takePills', { 'id': 1 }) }} {% endif %}"
                     class="button-pet" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %}>
                         <img class="pills" src="{{ asset('img/pillule_rouge.png') }}" alt="image medoc"></a></div>
-
-                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}" onclick="medicate()" class="button-pet"
-                       {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %} >
-                        <img class="pills" src="{{ asset('img/pillule_rouge.png') }}" alt="image medoc"></a>
                     <span>Pills</span>
                 </div>
                 <div class="text-button">
