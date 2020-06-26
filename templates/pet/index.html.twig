@@ -134,7 +134,7 @@
                     <div class="rotate-pills"><a href="{% if pet.hasPills > 0 %} {{ path('pet_takePills', { 'id': 1 }) }} {% endif %}"
                     class="button-pet" id="button-pill-link" onclick="medicate()" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %}>
                         <img class="pills" src="{{ asset('img/pillule_rouge.png') }}" alt="image medoc"></a></div>
-                    <div class="pills">
+                    <div class="pills eat">
                         <span>Pills (</span><span class="pills-nb">{{ pet.hasPills }}</span><span>)</span>
                     </div>
                 </div>
@@ -323,7 +323,7 @@
         ]
         const yourSentence = [
             '<strong>You gave bamboo to your pet</strong>',
-            '<strong>You gave medic to your pet</strong>',
+            '<strong>You gave medic to your pet, you receive 5 bamboo</strong>',
             '<strong>Your pet is dancing</strong>',
             '<strong>Your pet is playing</strong>',
             '<strong>Your pet is talking</strong>',
