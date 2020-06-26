@@ -548,7 +548,10 @@ a {
             span {
                 margin-top: 8px;
             }
+        }
 
+        .eat {
+            margin-top: 8px;
         }
 
         .container-button-pet {
@@ -595,7 +598,19 @@ a {
 
                 .pills {
                     height: 115px;
+
                 }
+            }
+        }
+
+        .rotate-pills {
+            img {
+                -webkit-transition: -webkit-transform .8s ease-in-out;
+                transition:         transform .8s ease-in-out;
+            }
+            img:hover {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
             }
         }
 
