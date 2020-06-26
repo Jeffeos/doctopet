@@ -8,57 +8,57 @@ $tertiaryColor: #51DACF;
 $titlefont: 'Pangolin', cursive;
 
 body {
-  background-color: #E5E5E5;
-  font-family: $titlefont;
+    background-color: #E5E5E5;
+    font-family: $titlefont;
 }
 
 h1 {
-  text-align: center;
-  padding: 30px;
+    text-align: center;
+    padding: 30px;
 }
 
 a {
-  color: #2C003E;
-  padding: 0;
-  font-family: $titlefont;
+    color: #2C003E;
+    padding: 0;
+    font-family: $titlefont;
 }
 
 .btn {
-  background-color: $tertiaryColor;
-  color: $secondaryColor;
+    background-color: $tertiaryColor;
+    color: $secondaryColor;
 }
 
 .body-container {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navbar-brand {
-  font-family: $titlefont;
-  margin-left: 20px;
+    font-family: $titlefont;
+    margin-left: 20px;
 }
 
 .doctopet-navbar {
-  background-color: $primaryColor;
-  color: $secondaryColor;
+    background-color: $primaryColor;
+    color: $secondaryColor;
 }
 
 /* NAVBAR */
 .doctopet-logo {
-  height: 40px;
-  width: 40px;
+    height: 40px;
+    width: 40px;
 }
 
 .introduction {
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.25rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.25rem;
 
-  p {
-    padding: 12px;
-  }
+    p {
+        padding: 12px;
+    }
 }
 
 /* MEDICINE INDEX PAGE */
@@ -89,25 +89,25 @@ a {
 }
 
 .bnj-medicine-card-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .bnj-card-border {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  border-radius: 16px;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 16px;
 }
 
 .bnj-medicine-card-body-container {
-  font-family: $titlefont;
-  display: flex;
-  justify-content: center;
+    font-family: $titlefont;
+    display: flex;
+    justify-content: center;
 }
 
 .medicine-button {
@@ -117,16 +117,16 @@ a {
 }
 
 .time-of-day {
-  display: flex;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 /* PANDA SECTION */
@@ -134,14 +134,14 @@ a {
   height: 200px;
   width: 200px;
   overflow: hidden;
-  margin: 15px 0px 15px 0px;
+  margin: 15px 0px -5px 0px;
 }
 
 .panda-container {
   height: 200px;
   width: 200px;
   overflow: hidden;
-  margin: 15px 0px 15px 0px;
+  margin: 15px 0px -5px 0px;
   transition: margin 4s linear;
 }
 
@@ -149,7 +149,7 @@ a {
   height: 200px;
   width: 200px;
   overflow: hidden;
-  margin: 15px 300px 15px 0px;
+  margin: 15px 300px -5px 0px;
   transition: margin 4s linear;
 }
 
@@ -157,48 +157,48 @@ a {
   height: 200px;
   width: 200px;
   overflow: hidden;
-  margin: 15px 0px 15px 300px;
+  margin: 15px 0px -5px 300px;
   transition: margin 4s linear;
 }
 
 .panda {
-  height: 200px;
+    height: 200px;
 }
 
 .panda-front-dance {
-  height: 200px;
-  animation: panda-front-dance-anim 2s steps(5) infinite;
+    height: 200px;
+    animation: panda-front-dance-anim 2s steps(5) infinite;
 }
 
 .panda-back-dance {
-  height: 200px;
-  animation: panda-back-dance-anim 3s steps(7) infinite;
+    height: 200px;
+    animation: panda-back-dance-anim 3s steps(7) infinite;
 }
 
 .panda-shake-dance {
-  height: 200px;
-  animation: panda-shake-dance-anim 1s steps(4) infinite;
+    height: 200px;
+    animation: panda-shake-dance-anim 1s steps(4) infinite;
 }
 
 .panda-play {
-  height: 200px;
-  animation: panda-play-anim 2s steps(3) infinite;
+    height: 200px;
+    animation: panda-play-anim 2s steps(3) infinite;
 }
 
 .panda-turn-around {
-  height: 200px;
-  animation: panda-turn-anim 2s steps(5) infinite;
+    height: 200px;
+    animation: panda-turn-anim 2s steps(5) infinite;
 }
 
 .panda-walk-left {
-  height: 200px;
-  animation: panda-walk-anim 1s steps(2) infinite;
+    height: 200px;
+    animation: panda-walk-anim 1s steps(2) infinite;
 }
 
 .panda-walk-right {
-  height: 200px;
-  transform: rotateY(180deg);
-  animation: panda-walk-anim2 1s steps(2) infinite;
+    height: 200px;
+    transform: rotateY(180deg);
+    animation: panda-walk-anim2 1s steps(2) infinite;
 }
 
 .anim,
@@ -207,10 +207,10 @@ a {
 .panda-container-right,
 .pand-container,
 .bulles-option {
-  display: none;
+    display: none;
 }
 
-.activated, .activate, .act {
+.activated, .activate, .active-talk {
   display: block;
 }
 
@@ -218,100 +218,145 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: solid darkgreen 15px;
 }
 
 #walk-button {
-  z-index: -1;
-  opacity: 0;
+    z-index: -1;
+    opacity: 0;
 }
 
 .bulles {
-  display: flex;
+    display: flex;
 }
 
 .bulles-left {
   height: 150px;
-  width: 150px;
 }
 
 .bulles-right {
   height: 150px;
-  width: 150px;
   transform: rotateY(180deg);
 }
 
-  .bnj-container-number {
-    border: 1px solid $secondaryColor;
-  }
+.bulle-anim {
+  animation: pandaTalk 2s steps(5) infinite;
+}
+.bulle-anim2 {
+  animation: pandaTalk2 0.5s steps(2) infinite;
+}
 
-  /* KEYFRAMES ANIMATIONS */
-  @keyframes panda-front-dance-anim {
+.panda-talking {
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+}
+
+  .bnj-container-number {
+    height: 150px;
+    width: 150px;
+}
+
+.bulles-right {
+    height: 150px;
+    width: 150px;
+    transform: rotateY(180deg);
+}
+
+.bnj-container-number {
+    border: 1px solid $secondaryColor;
+}
+
+/* KEYFRAMES ANIMATIONS */
+@keyframes panda-front-dance-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -1000px
+        margin-left: -1000px
     }
-  }
-  @keyframes panda-back-dance-anim {
+}
+
+@keyframes panda-back-dance-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -1400px
+        margin-left: -1400px
     }
-  }
-  @keyframes panda-play-anim {
+}
+
+@keyframes panda-play-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -600px
+        margin-left: -600px
     }
-  }
-  @keyframes panda-shake-dance-anim {
+}
+
+@keyframes panda-shake-dance-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -800px
+        margin-left: -800px
     }
-  }
-  @keyframes panda-turn-anim {
+}
+
+@keyframes panda-turn-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -1000px
+        margin-left: -1000px
     }
-  }
-  @keyframes panda-walk-anim {
+}
+
+@keyframes panda-walk-anim {
     0% {
-      margin-left: 0px
+        margin-left: 0px
     }
     100% {
-      margin-left: -400px
+        margin-left: -400px
     }
-  }
-  @keyframes panda-walk-anim2 {
+}
+
+@keyframes panda-walk-anim2 {
     0% {
-      margin-left: -200px
+        margin-left: -200px
     }
     100% {
-      margin-left: 200px
+        margin-left: 200px
     }
   }
-  @keyframes pandaMoveLeft {
+  @keyframes pandaTalk {
     from {
-      transform: translate(0px, 0px)
+      margin-left: 0px
     }
     to {
-      transform: translate(-200px, 0px)
+      margin-left: -750px
     }
   }
+@keyframes pandaTalk2 {
+  from {
+    margin-left: 0px
+  }
+  to {
+    margin-left: -300px
+  }
+}
+@keyframes pandaMoveLeft {
+  from {
+    transform: translate(0px, 0px)
+  }
+  to {
+    transform: translate(-200px, 0px)
+  }
+}
 
-  //MOBILE VIEW GAME INDEX
-  .bloc_page_pet {
+//MOBILE VIEW GAME INDEX
+.bloc_page_pet {
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -334,11 +379,24 @@ a {
         -moz-box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
     }
 
+    .container-pet {
+        display: flex;
+        flex-direction: column-reverse;
+        overflow: hidden;
+        border: 6px solid black;
+        height: 65vh;
+        margin: 0 10px;
+        background-position-y: bottom;
+        background-size: cover;
+        background-image: url(/img/fondbaboo.png);
+        background-color: burlywood;
+    }
     .inside-progress-health-bar-pet { //display inside progress bar
         background-color: $primaryColor;
         height: 24px;
         border-radius: 15px;
         width: 20%;
+
     }
 
     .progress-happiness-bar { //display background progress bar
@@ -358,7 +416,7 @@ a {
         background-color: blue;
         height: 24px;
         border-radius: 15px;
-        width: 20%;
+        width: 10%;
     }
 
     .text-progress {
@@ -375,41 +433,27 @@ a {
     }
 
     .container-pet-name {
-      margin: 0 10px;
-      border: 1px solid black;
+        margin: 0 10px;
+        border: 1px solid black;
     }
 
     .container-button-pet {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      margin: 10px;
-
-      .text-button {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 10px;
 
-      .button-pet {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid black;
-        height: 55px;
-        width: 55px;
-        border-radius: 50%;
-        background-color: #51DACF;
-
-        &:focus {
-          outline: none;
+        .text-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .button-pet {
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid black;
+            border: 3px solid black;
             height: 55px;
             width: 55px;
             border-radius: 50%;
@@ -431,41 +475,40 @@ a {
                 height: 6vh;
             }
         }
-      }
     }
-  }
+}
 
-  //DESKTOP VIEW GAME INDEX
-  @media all and (min-width: 769px) {
+//DESKTOP VIEW GAME INDEX
+@media all and (min-width: 769px) {
 
     .bloc_page_pet {
-      margin: 10px;
-      display: flex;
-      flex-direction: row-reverse;
-      position: relative;
-
-      .health-bar {
-        border: 1px solid black;
-        height: 4vh;
-        margin: 10px;
-        width: 85%;
-      }
-
-      .happiness-bar {
-        border: 1px solid black;
-        height: 4vh;
-        margin: 10px;
-        width: 85%;
-      }
-
-      .container-left {
         margin: 10px;
         display: flex;
-        flex-direction: column;
-      }
+        flex-direction: row-reverse;
+        position: relative;
 
+        .health-bar {
+            border: 1px solid black;
+            height: 4vh;
+            margin: 10px;
+            width: 85%;
+        }
+
+        .happiness-bar {
+            border: 1px solid black;
+            height: 4vh;
+            margin: 10px;
+            width: 85%;
+        }
+
+        .container-left {
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+      
       .container-pet {
-        border: 1px solid black;
+        border: 6px solid black;
         height: 65vh;
         margin: 10px;
         width: 85%;
@@ -512,7 +555,7 @@ a {
             background-color: blue;
             height: 24px;
             border-radius: 15px;
-            width: 20%;
+            width: 10%;
         }
 
         .text-progress {
@@ -521,18 +564,19 @@ a {
             align-items: center;
         }
 
-      .container-pet-name {
-        margin: 0 10px;
-        border: 1px solid black;
-      }
+        .container-pet-name {
+            margin: 0 10px;
+            border: 1px solid black;
+        }
 
-      .container-button-pet {
-        display: flex;
-        justify-content: space-around;
-        height: 40%;
+        .text-button {
+            span {
+                margin-top: 8px;
+            }
+        }
 
-        .text-button:nth-child(2) {
-          align-self: flex-end;
+        .eat {
+            margin-top: 8px;
         }
 
         .container-button-pet {
@@ -548,15 +592,22 @@ a {
                 align-self: flex-end;
             }
 
+            .container-button-pet {
+                display: flex;
+                justify-content: space-around;
+                height: 40%;
+            }
+
             .button-pet {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border: 1px solid black;
+                border: 5px solid black;
+                box-shadow: 8px 8px black;
                 height: 110px;
                 width: 110px;
                 border-radius: 50%;
-                background-color: $tertiaryColor;
+                background-color: #51DACF;
 
                 &:focus {
                     outline: none;
@@ -572,54 +623,41 @@ a {
 
                 .pills {
                     height: 115px;
+
                 }
             }
-
         }
 
-        .button-pet {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border: 1px solid black;
-          height: 110px;
-          width: 110px;
-          border-radius: 50%;
-          background-color: #51DACF;
-
-          &:focus {
-            outline: none;
-          }
-
-          img {
-            height: 6.5vh;
-          }
-
-          .bamboo {
-            height: 80px;
-          }
+        .rotate-pills {
+            img {
+                -webkit-transition: -webkit-transform .8s ease-in-out;
+                transition:         transform .8s ease-in-out;
+            }
+            img:hover {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
         }
-      }
 
-      .container-pet-rules {
-        border: 1px solid black;
-        height: 350px;
-        margin: 10px;
-      }
+        .container-pet-rules {
+            border: 1px solid black;
+            height: 350px;
+            margin: 10px;
+        }
 
-      .container-pet-name {
-        border: 1px solid black;
-      }
+        .container-pet-name {
+            border: 1px solid black;
+        }
 
-      .container-bar-pet {
-        width: 65%;
-        display: flex;
-        flex-direction: column;
-      }
+        .container-bar-pet {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+        }
     }
-  }
+}
 
-  @media all and (min-width: 992px) {
+@media all and (min-width: 992px) {
 
     .bnj-medicine-main-container {
       margin-top: 50px;
@@ -627,36 +665,74 @@ a {
     }
 
     .bnj-medicine-card-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
-      flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
     .bnj-card-border {
-      width: 40%;
+        width: 40%;
     }
 
     .bnj-medicine-form-desktop {
-      display: flex;
+        display: flex;
     }
 
     .time-of-day {
-      display: flex;
-      flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
 
     .bnj-timeofday-desktop {
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .bnj-timeofday-desktop:nth-child(2) {
-      display: flex;
-      justify-content: flex-start;
+        display: flex;
+        justify-content: flex-start;
     }
 
+  }
+
+.background-grey {
+  background-color: #A9A9A9 !important;
+}
+
+.happiness10 {
+    width: 10% !important;
+}
+
+.happiness20 {
+    width: 20% !important;
+}
+
+.happiness30 {
+    width: 30% !important;
+}
+
+.happiness40 {
+    width: 40% !important;
+}
+.happiness50 {
+    width: 50% !important;
+}
+.happiness60 {
+    width: 60% !important;
+}
+.happiness70 {
+    width: 70% !important;
+}
+.happiness80 {
+    width: 80% !important;
+}
+.happiness90 {
+    width: 90% !important;
+}
+.happiness100 {
+    width: 100% !important;
 }
