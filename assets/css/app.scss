@@ -383,7 +383,7 @@ a {
       background-color: burlywood;
     }
 
-    .inside-progress-health-bar-pet { //display inside progress bar
+  .inside-progress-health-bar-pet { //display inside progress bar
         background-color: $primaryColor;
         height: 24px;
         border-radius: 15px;
@@ -408,7 +408,7 @@ a {
         background-color: blue;
         height: 24px;
         border-radius: 15px;
-        width: 20%;
+        width: 10%;
     }
 
     .text-progress {
@@ -562,7 +562,7 @@ a {
             background-color: blue;
             height: 24px;
             border-radius: 15px;
-            width: 20%;
+            width: 10%;
         }
 
         .text-progress {
@@ -586,7 +586,10 @@ a {
             span {
                 margin-top: 8px;
             }
+        }
 
+        .eat {
+            margin-top: 8px;
         }
 
         .container-button-pet {
@@ -633,7 +636,19 @@ a {
 
                 .pills {
                     height: 115px;
+
                 }
+            }
+        }
+
+        .rotate-pills {
+            img {
+                -webkit-transition: -webkit-transform .8s ease-in-out;
+                transition:         transform .8s ease-in-out;
+            }
+            img:hover {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
             }
         }
 
@@ -690,4 +705,42 @@ a {
         justify-content: flex-start;
     }
 
+  }
+
+.background-grey {
+  background-color: #A9A9A9 !important;
+}
+
+.happiness10 {
+    width: 10% !important;
+}
+
+.happiness20 {
+    width: 20% !important;
+}
+
+.happiness30 {
+    width: 30% !important;
+}
+
+.happiness40 {
+    width: 40% !important;
+}
+.happiness50 {
+    width: 50% !important;
+}
+.happiness60 {
+    width: 60% !important;
+}
+.happiness70 {
+    width: 70% !important;
+}
+.happiness80 {
+    width: 80% !important;
+}
+.happiness90 {
+    width: 90% !important;
+}
+.happiness100 {
+    width: 100% !important;
 }
