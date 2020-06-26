@@ -12,10 +12,10 @@ class NotificationManager extends AbstractController
 {
     function sendMessage()
     {
-
         $content = array(
             "en" => "Don't forget to take care of your friend! :-)",
-        );
+            "chrome_big_picture" => "https://img.onesignal.com/t/c987cfa9-0815-4db9-b4e7-d204265c3e38.gif",
+            );
 
 
         $headings = array(
@@ -27,7 +27,6 @@ class NotificationManager extends AbstractController
             'include_player_ids' => array("6c48dcf9-f564-4167-b0d7-532972178db9","95b2a02f-6381-4907-97af-85c6cca325f9","8e0f21fa-9a5a-4ae7-a9a6-ca1f24294b86"),
             'data' => array("foo" => "bar"),
             'contents' => $content,
-            'chrome_big_picture	' => "http://localhost:8000//images/notif_panda.gif",
             'headings' => $headings,
             'web_url' => "http://localhost:8000/pet/1/addPill",
         );
