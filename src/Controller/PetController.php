@@ -6,6 +6,7 @@ use App\Entity\Pet;
 use App\Form\PetType;
 use App\Repository\PetRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -104,14 +105,38 @@ class PetController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/takePill", name="pet_takePills", methods={"GET"})
+     * @Route("/{id}/takePill", name="pet_takePills", methods={"GET", "POST"})
      */
     public function takePill(Pet $pet): Response
     {
         $pet->setHasPills(false);
-        $pet->setHappiness($pet->getHappiness()+20);
+        $pet->setHealth($pet->getHealth()+20);
+        $pet->setHasBamboo($pet->getHasBamboo()+5);
+
         $this->getDoctrine()->getManager()->flush();
 
-        return $this->redirectToRoute('pet_index', ['id' => 1] );
+        return new JsonResponse([
+            'pills' => 0,
+            'health' => $pet->getHealth(),
+        ]);
+        // return $this->redirectToRoute('pet_index', ['id' => 1] );
+    }
+
+    /**
+     * @Route("/{id}/feed", name="pet_feed", methods={"GET","POST"})
+     */
+    public function feed(Pet $pet, Request $request): Response
+    {
+        $pet->setHasBamboo($pet->getHasBamboo()-1);
+        if ($pet->getHappiness() < 90) {
+            $pet->setHappiness($pet->getHappiness() + 10);
+        }
+        $this->getDoctrine()->getManager()->flush();
+
+        return new JsonResponse([
+            'bamboo' => $pet->getHasBamboo(),
+            'happiness' => (int) $pet->getHappiness(),
+        ]);
+
     }
 }

@@ -3,49 +3,416 @@
 {% block title %}Pet index{% endblock %}
 
 {% block body %}
+    {% set progressHealth %}
+        {% if pet.health <= 20 %}20%
+        {% elseif pet.health <= 40 %}40%
+        {% elseif pet.health <= 60 %}60%
+        {% elseif pet.health <= 80 %}80%
+        {% elseif pet.health <= 100 %}100%
+        {% endif %}
+    {% endset %}
 
+    {% set progressHappiness %}
+        {% if pet.happiness <= 10 %}10%
+        {% elseif pet.happiness <= 20 %}20%
+        {% elseif pet.happiness <= 30 %}30%
+        {% elseif pet.happiness <= 40 %}40%
+        {% elseif pet.happiness <= 50 %}50%
+        {% elseif pet.happiness <= 60 %}60%
+        {% elseif pet.happiness <= 70 %}70%
+        {% elseif pet.happiness <= 80 %}80%
+        {% elseif pet.happiness <= 90 %}90%
+        {% elseif pet.happiness <= 100 %}100%
+        {% endif %}
+    {% endset %}
+    <div class="container-pet-name container-pet-name-mobile">
+        <h3 class="text-center">{{ pet.name }}</h3>
+    </div>
     <div class="bloc_page_pet">
         <div class="container-bar-pet">
-            <div class="health-bar"></div>
-            <div class="container-pet"></div>
-            <div class="happiness-bar"></div>
+            <div class="progress-health-bar">
+                <div class=" progress-bar progress-bar-striped inside-progress-health-bar-pet" id="health-gauge" style="width:{{ progressHealth }}"></div>
+            </div>
+            <div class="text-progress">
+                <span>Health</span>
+                <div class="container-pet">
+                    <div class="panda-window-container">
+                        <button onclick="changeTheVariableToWalk()" id="walk-button">walk</button>
+                        <div class="bulles">
+                        <div class="panda-talking">
+                            <div>
+                                <img id="bubble-points" class="bulles-option bulles-left bulle-anim " src="{{ asset('/img/panda-bulles/panda-bubble-talking.png') }}">
+                                <img class="bulles-option bulles-left bulle-anim2" src="{{ asset('/img/panda-bulles/panda-bubble-hearts (1).png') }}">
+                            </div>
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/brokenheart.png') }}">
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                            <img class="bulles-option bulles-left" src="{{ asset('/img/panda-bulles/heart.png') }}">
+                        </div>
+                        <div>
+                            <img class="bulles-option bulles-right" src="{{ asset('/img/panda-bulles/happyface.png') }}">
+                            <img class="bulles-option bulles-right" src="{{ asset('/img/panda-bulles/bofface.png') }}">
+                            <img class="bulles-option bulles-right" src="{{ asset('/img/panda-bulles/sadface.png') }}">
+                        </div>
+                        </div>
+
+                        <div id="panda-move" class="panda-container activate">
+                            <img id="panda-walk-left" class="panda-walk-left anim activated"
+                                 src="{{ asset('/img/panda-sprites/panda-walk-left.png') }}">
+                            <img id="panda-walk-right" class="panda-walk-right anim "
+                                 src="{{ asset('/img/panda-sprites/panda-walk-left.png') }}">
+                        </div>
+                        <div id="panda-stay" class="pand-container ">
+                            <img id="panda-front" class="panda anim activated"
+                                 src="{{ asset('/img/panda-sprites/panda-front.png') }}">
+                            <img id="panda-front-dance" class="panda-front-dance anim "
+                                 src="{{ asset('/img/panda-sprites/panda-front-dance.png') }}">
+                            <img id="panda-back-dance" class="panda-back-dance anim "
+                                 src="{{ asset('/img/panda-sprites/panda-back-dance.png') }}">
+                            <img id="panda-shake-dance" class="panda-shake-dance anim "
+                                 src="{{ asset('/img/panda-sprites/panda-shake.png') }}">
+                            <img id="panda-play" class="panda-play anim "
+                                 src="{{ asset('/img/panda-sprites/panda-circus.png') }}">
+                            <img id="panda-turn-around" class="panda-turn-around anim"
+                                 src="{{ asset('/img/panda-sprites/panda-turn-around.png') }}">
+                        </div>
+                    </div>
+                </div>
+                <span>Happiness</span>
+            </div>
+            <div class="progress-happiness-bar">
+                <div class="progress-bar progress-bar-striped inside-progress-happiness-bar-pet" id="happy-gauge" style="width:{{ progressHappiness }}"></div>
+            </div>
         </div>
         <div class="container-left">
             <div class="container-pet-infos"></div>
-            <div class="container-pet-name">
+            <div class="container-pet-name container-pet-name-desk">
+                <div class="container-background-bamboo">
+                    <img class="img-bamboo" src="{{ asset('images/icone_nourriture.png') }}" alt="bamboo">
                     <h3 class="text-center">{{ pet.name }}</h3>
+                    <img class=" img-bamboo" src="{{ asset('images/icone_nourriture.png') }}" alt="bamboo">
+                </div>
             </div>
-            <div class="container-pet-rules"></div>
+            <div class="container-pet-rules container-pet-rules-desk">
+                <h5 id="line1">Hello there !</h5>
+                <h5 id="line2"></h5>
+                <h5 id="line3"></h5>
+                <h5 id="line4"></h5>
+                <h5 id="line5"></h5>
+                <h5 id="line6"></h5>
+                <h5 id="line7"></h5>
+                <div class="chating">
+                    <h5 id="line8"></h5>
+                </div>
+            </div>
 
             <div class="container-button-pet">
-                <div class="text-button">
-                    <button class="button-pet"><img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
-                                                    alt="image bamboo"></button>
-                    <span>Eat</span>
+                <div class="text-button bamboo-btn">
+                    <a href="{% if pet.hasBamboo > 0 %} {{ path('pet_feed', {'id': 1}) }} {% endif %}" onclick="eat()" class="button-pet" id="button-pet-eat" {% if pet.hasBamboo == 0 %}style="background-color:darkgrey"{% endif %} >
+                        <img class="bamboo" src="{{ asset('images/icone_nourriture.png') }}"
+                                                    alt="image bamboo"></a>
+                    <div class="eat">
+                        <span>Eat (</span><span class="bamboo-nb">{{ pet.hasBamboo }}</span><span>)</span>
+                    </div>
+
                 </div>
                 <div class="text-button">
-                    <button class="button-pet"><img src="{{ asset('images/icone_discussion.png') }}"
+                    <button id="btn-bubble" onclick="toggleTalking(), talk()"
+                            class="button-pet"><img src="{{ asset('images/icone_discussion.png') }}"
                                                     alt="image bulle">
                     </button>
                     <span>Talk</span>
                 </div>
                 <div class="text-button">
-                    <button class="button-pet"><img src="{{ asset('images/icone_panda_danse.png') }}"
-                                                    alt="image panda">
+                    <button class="button-pet" onclick="changeTheVariableToDance(), dance()" id="dance-button"><img
+                                src="{{ asset('images/icone_panda_danse.png') }}"
+                                alt="image panda">
                     </button>
                     <span>Dance</span>
                 </div>
-                <div class="text-button">
-                    <a href="{{ path('pet_takePills', { 'id': 1 }) }}" class="button-pet {% if pet.hasPills %}{% endif %}"><img class="bamboo" src="{{ asset('images/icone_medoc.png') }}"
-                                                    alt="image medoc"></a>
-                    <span>Pills</span>
+                <div class="text-button button-pill">
+                    <div class="rotate-pills"><a href="{% if pet.hasPills > 0 %} {{ path('pet_takePills', { 'id': 1 }) }} {% endif %}"
+                    class="button-pet" id="button-pill-link" onclick="medicate()" {% if pet.hasPills == 0 %}style="background-color:darkgrey"{% endif %}>
+                        <img class="pills" src="{{ asset('img/pillule_rouge.png') }}" alt="image medoc"></a></div>
+                    <div class="pills eat">
+                        <span>Pills (</span><span class="pills-nb">{{ pet.hasPills }}</span><span>)</span>
+                    </div>
                 </div>
                 <div class="text-button">
-                    <button class="button-pet"><img src="{{ asset('images/icone_panda_jeu.png') }}" alt="image panda">
+                    <button class="button-pet" onclick="changeTheVariableToPlay(), play()" id="play-button"><img
+                                src="{{ asset('images/icone_panda_jeu.png') }}" alt="image panda">
                     </button>
                     <span>Play</span>
                 </div>
             </div>
+            <div class="container-pet-rules container-pet-rules-mobile">
+                <h5 id="line1">Hello there !</h5>
+                <h5 id="line2"></h5>
+                <h5 id="line3"></h5>
+                <h5 id="line4"></h5>
+                <h5 id="line5"></h5>
+                <h5 id="line6"></h5>
+                <h5 id="line7"></h5>
+                <div class="chating">
+                    <h5 id="line8"></h5>
+                </div>
+            </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        const petStates = [
+            'danceState',
+            'walkState',
+            'playState',
+            'idleState',
+        ]
+        const danceStates = [
+            'danceFront',
+            'danceBack',
+            'danceShake',
+        ]
+        const moveState = [
+            'walkLeft',
+            'walkRight',
+        ]
+        const playState = 'play'
+        const idleState = 'idle'
+
+        let currentState = 'walkState'
+        let currentDanceState = 'danceFront'
+        let walkDirection = "left"
+        let i = 0
+        let isTalking = false
+        let ij = 0
+
+        setInterval(function () {
+            let active = document.getElementsByClassName('activated')
+            active[0].classList.toggle("activated")
+            let actived = document.getElementsByClassName('activate')
+            actived[0].classList.toggle("activate")
+
+            if (isTalking && ij < 4) {
+                document.getElementById("bubble-points").classList.add("active-talk")
+                ij++
+            } else if (isTalking && ij < 8) {
+                document.getElementsByClassName("bulles-right")[0].classList.add("active-talk")
+                ij++
+            } else if (ij == 8) {
+                ij = 0
+                document.getElementsByClassName("active-talk")[0].classList.toggle("active-talk")
+                document.getElementsByClassName("active-talk")[0].classList.toggle("active-talk")
+                isTalking = false
+            }
+
+            switch (currentState) {
+                case "walkState":
+                    document.getElementById('panda-move').classList.add("activate")
+
+                    if (i == 0) {
+                        document.getElementsByClassName('panda-container')[0].classList.replace(
+                            "panda-container",
+                            "panda-container-left"
+                        )
+                        i++
+                    } else if (i == 1) {
+                        document.getElementsByClassName('panda-container-left')[0].classList.replace(
+                            "panda-container-left",
+                            "panda-container"
+                        )
+                        walkDirection = 'right'
+                        i++
+                    } else if (i == 2) {
+                        document.getElementsByClassName('panda-container')[0].classList.replace(
+                            "panda-container",
+                            "panda-container-right"
+                        )
+                        i++
+                    } else {
+                        document.getElementsByClassName('panda-container-right')[0].classList.replace(
+                            "panda-container-right",
+                            "panda-container"
+                        )
+                        walkDirection = 'left'
+                        i = 0
+                    }
+
+                    if (walkDirection === 'left')
+                        document.getElementById('panda-walk-left').classList.add("activated")
+                    else
+                        document.getElementById('panda-walk-right').classList.add("activated")
+                    break;
+                case "danceState":
+                    document.getElementById('panda-stay').classList.add("activate")
+                    document.getElementById('panda-front-dance').classList.add("activated")
+                    break;
+                case "playState":
+                    document.getElementById('panda-stay').classList.add("activate")
+                    document.getElementById('panda-play').classList.add("activated")
+                    break;
+            }
+        }, 1000);
+
+        function changeDance() {
+            setInterval(function () {
+                currentDanceState = danceStates[Math.floor(Math.random() * danceStates.length)]
+                switch (currentDanceState) {
+                    case 'danceFront':
+                        document.getElementById('panda-front-dance').classList.add("activated")
+                        break;
+                    case 'danceBack':
+                        document.getElementById('panda-back-dance').classList.add("activated")
+                        break;
+                    case 'danceShake':
+                        document.getElementById('panda-shake-dance').classList.add("activated")
+                        break;
+                }
+            }, 5000)
+        }
+
+        function changeTheVariableToWalk() {
+            currentState = 'walkState';
+            console.log('walking')
+        }
+
+        function changeTheVariableToPlay() {
+            currentState = 'playState';
+            console.log('play')
+        }
+
+        function changeTheVariableToDance() {
+            currentState = 'danceState';
+            console.log('dance')
+        }
+
+        function toggleTalking() {
+            isTalking = true
+        }
+
+    </script>
+    <script>
+        setInterval(function () {
+            document.getElementById('walk-button').click()
+            console.log('click')
+        }, 16000)
+    </script>
+    <script>
+        const sentence = [
+            'Your pet feels good',
+            'Your pet is hungry',
+            'Your pet wants to dance',
+            'Your pet wants to play',
+            'Your pet is happy',
+            'Your pet loves cheddar',
+            'Your pet is not a yeti',
+            'Your pet wants a cookie',
+            'Your pet is healthy',
+            'Your pet wants to surf',
+            'Your pet wants to ski',
+            'Your pet loves you',
+            'Take care of your panda',
+            'Your pet\'s favourite number is 42',
+            'Your pet knows kung-fu',
+            'Your pet eats vegetables',
+            'Your pet loves DoctoLib et Dataiku',
+            'Your pet don\'t know what is PHP',
+            'Your pet can\'t use a computer',
+
+        ]
+        const yourSentence = [
+            '<strong>You gave bamboo to your pet</strong>',
+            '<strong>You gave medic to your pet, you receive 5 bamboo</strong>',
+            '<strong>Your pet is dancing</strong>',
+            '<strong>Your pet is playing</strong>',
+            '<strong>Your pet is talking</strong>',
+            '<strong>Your pet is hanging around</strong>',
+        ]
+
+        let idx = 2
+
+        setInterval(function () {
+
+            if (idx < 8) {
+                document.getElementById('line' + idx).innerHTML = sentence[Math.floor(Math.random() * sentence.length)];
+                idx++
+            } else if (idx > 7) {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line' + idx).innerHTML = sentence[Math.floor(Math.random() * sentence.length)]
+                }
+            }
+        }, 15000)
+
+        function dance() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[2]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[2]
+                }
+            }
+
+        }
+        function move() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[5]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[5]
+                }
+            }
+        }
+        function play() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[3]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[3]
+                }
+            }
+        }
+        function eat() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[0]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[0]
+                }
+            }
+        }
+        function medicate() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[1]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[1]
+                }
+
+            }
+        }
+        function talk() {
+            if (idx < 8) {
+                document.getElementById('line'+idx).innerHTML = yourSentence[4]
+                idx++
+            } else {
+                for (let i = 1; i < 8; i++) {
+                    document.getElementById('line'+i).innerHTML = document.getElementById('line'+(i + 1)).innerHTML
+                    document.getElementById('line'+idx).innerHTML = yourSentence[4]
+                }
+            }
+        }
+
+    </script>
 {% endblock %}

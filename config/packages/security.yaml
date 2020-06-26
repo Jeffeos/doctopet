@@ -20,6 +20,9 @@ security:
             guard:
                 authenticators:
                     - App\Security\LoginFormAuthenticator
+            form_login:
+                default_target_path: app_medicine_index
+                always_use_default_target_path: true
             logout:
                 path: app_logout
                 # where to redirect after logout

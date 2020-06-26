@@ -1,14 +1,23 @@
 {{ form_start(form) }}
-    <div class="container">
-        <div class="row bnj-medicine-form-desktop">
-            <div class="col-sm-12 col-lg-4">{{ form_row(form.name) }}</div>
+    <div class="container bnj-medicine-main-container">
+        <div class="bnj-medicine-form-desktop">
+            <div class="col-lg-4 bnj-panda-background">
+                <img id="panda-img" src="{{ asset('../img/panda_head.png') }}" alt="panda_head" class="bnj-panda-mobile-image">
+                <div id="panda-border" onclick="addFirstPanda()" class="col-sm-12">{{ form_row(form.name) }}</div>
+            </div>
             <div class="row time-of-day">
                 <div class="col bnj-timeofday-desktop">{{ form_row(form.morning) }}</div>
                 <div class="col bnj-timeofday-desktop">{{ form_row(form.noon) }}</div>
                 <div class="col bnj-timeofday-desktop">{{ form_row(form.evening) }}</div>
             </div>
-            <div class="col-sm-12 col-lg-3">{{ form_row(form.quantity) }}</div>
-            <div class="col-sm-12 col-lg-3">{{ form_row(form.numberOfDays) }}</div>
+            <div class="col-lg-3 bnj-panda-background">
+                <img id="panda-img-bis" src="{{ asset('../img/panda_head.png') }}" alt="panda_head" class="bnj-panda-mobile-image">
+                <div id="quantity" onclick="addSecondPanda()" class="col-sm-12">{{ form_row(form.quantity) }}</div>
+            </div>
+            <div class="col-lg-3 bnj-panda-background">
+                <img id="panda-img-ter" src="{{ asset('../img/panda_head.png') }}" alt="panda_head" class="bnj-panda-mobile-image">
+                <div id="number-of-days" onclick="addThirdPanda()" class="col-sm-12">{{ form_row(form.numberOfDays) }}</div>
+            </div>
         </div>
     </div>
 

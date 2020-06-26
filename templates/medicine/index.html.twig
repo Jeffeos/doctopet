@@ -3,7 +3,11 @@
 {% block title %}Medicine index{% endblock %}
 
 {% block body %}
+    <div class="container-background-bamboo">
+        <img class="img-bamboo" src="{{ asset('images/icone_nourriture.png') }}" alt="bamboo">
     <h1 style="font-family: 'Pangolin', cursive;">Add a new medicine</h1>
+        <img class=" img-bamboo" src="{{ asset('images/icone_nourriture.png') }}" alt="bamboo">
+    </div>
 
     {{ include('medicine/_form.html.twig', {'button_label': 'Update'}) }}
 
@@ -13,4 +17,42 @@
         </div>
     {% endif %}
 
+{% endblock %}
+{% block javascripts %}
+    <script>
+
+        function addFirstPanda() {
+            document.getElementById('quantity').classList.remove("bnj-panda-border-mobile");
+            document.getElementById('panda-img-bis').classList.remove("bnj-panda-mobile-image-display");
+
+            document.getElementById('number-of-days').classList.remove("bnj-panda-border-mobile");
+            document.getElementById('panda-img-ter').classList.remove("bnj-panda-mobile-image-display");
+
+            document.getElementById('panda-border').classList.add("bnj-panda-border-mobile");
+            document.getElementById('panda-img').classList.add("bnj-panda-mobile-image-display");
+        }
+
+        function addSecondPanda() {
+            document.getElementById('panda-border').classList.remove("bnj-panda-border-mobile");
+            document.getElementById('panda-img').classList.remove("bnj-panda-mobile-image-display");
+
+            document.getElementById('number-of-days').classList.remove("bnj-panda-border-mobile");
+            document.getElementById('panda-img-ter').classList.remove("bnj-panda-mobile-image-display");
+
+            document.getElementById('quantity').classList.add("bnj-panda-border-mobile");
+            document.getElementById('panda-img-bis').classList.add("bnj-panda-mobile-image-display");
+        }
+
+        function addThirdPanda() {
+            document.getElementById('quantity').classList.remove("bnj-panda-border-mobile");
+            document.getElementById('panda-img-bis').classList.remove("bnj-panda-mobile-image-display");
+
+            document.getElementById('panda-border').classList.remove("bnj-panda-border-mobile");
+            document.getElementById('panda-img').classList.remove("bnj-panda-mobile-image-display");
+
+            document.getElementById('number-of-days').classList.add("bnj-panda-border-mobile");
+            document.getElementById('panda-img-ter').classList.add("bnj-panda-mobile-image-display");
+        }
+
+    </script>
 {% endblock %}

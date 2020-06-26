@@ -146,4 +146,11 @@
         }
 
     </script>
+    <script>
+        document.getElementById('walk-button').style.display = 'none'
+        setInterval(function () {
+            document.getElementById('walk-button').click()
+            console.log('click')
+        }, 1000)
+    </script>
 {% endblock %}
